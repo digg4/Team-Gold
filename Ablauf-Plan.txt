@@ -1,0 +1,138 @@
+1.1 Pflichtenheft
+1.2 Planung
+	-> Strukturplan
+	-> Ablaufplan
+1.3 Risiko-Management
+	-> Was könnte das Projekt gefährten?
+	-> Wie können wir das lösen?
+1.4 Verifikation & Planung
+	-> Ständige Kontrolle: Wie liegen wir im Plan?
+	-> Immer machen
+1.5 Doku
+	-> Spieleanleitung
+	-> Installationsanleitung
+1.6 Übergabe
+
+
+
+
+
+______________________ alt _______________________________
+
+Entwurfsphase:
+	Software:
+		Planung der Program-Architektur - 10 Personenstunden
+			-> Aufteiling in Engine / Game
+			-> Einteiling des Programs in Module (Service-Modul, GUI-Modul, ...)
+			-> Paketstruktur
+			* Benötigt: - *
+		Erstellung der Coding-Guidelines - 2 Personenstunde
+			-> CleanCode? -> DRY, ...
+			-> Konventionen
+			-> Regeln
+			-> TDD?
+			-> Wie kommentieren wir?
+			* Benötigt: - *
+		Planung der UnitTests - 2 Personenstunde
+			-> Machen wir überhauot Tests?
+			-> Was testen wir / wie testen wir?
+			* Benötigt: - *
+	Grafik-Design:
+		Erstellung eines Einheitlichen Grafik-Stils - 8 Personenstunden
+			-> Grafik-Stil insgesamt
+			-> Stil der Minigames
+			-> Stil der GUI
+			-> Stil der Komponenten in den Games
+			* Benötigt: Ggf erste Minigame-Konzepte *
+		Sound - 2 Personenstunde
+			-> Welche Sounds sollen bei welcher Aktion gespielt werden?
+			-> Welche Hintergrund-Musik gibt es?
+			-> Falls es Video-Sequenzen gibt: mit oder ohne Sound?
+			* Benötigt: Erste Minigame Konzepte, erste GUI Konzepte *
+	Programm-Design:
+		Einteilung des Programms in Statusse - 5 Personenstunden
+			-> In welchem Status kann sich das Program befinden? (welche Menüs, Level, Video-Sequenzen, ...)
+			-> Von welchem Status kommt man in welchen anderen?
+			-> Wie sind die Übergänge gestaltet?
+			-> Auf welche Weise wechselt man?
+			* Benötigt: - *
+		Erstellung der GUI - 5 Personenstunden
+			-> Wie ist jedes Menü aufgebaut? (Wo sind Buttens etc.)
+			-> Welche GUI gibt es in den Minigames?
+			* Benötigt: Einteilung des Programms in Statusse *
+		Minigame Konzepte - 3 Personenstunden
+			-> Was ist das Ziel der Minigames?
+			-> Wie wird der höhere schwierigkeitsgrad umgesetzt?
+			-> Wie werden die aktuellen Statistiken (verbleibende Zeit, Leben, ...) angezeigt?
+			-> Was passiert, wenn man gewinnt, verliert?
+			* Benötigt: - *
+	Sonstiges:
+		Repository - 2 Personenstunde
+			-> Ertellung eines Reporitorys bei GIT? (oder vergleichbaren Anbietern)
+			-> Ordnerstruktur festlegen (Einteilung in Source-Code, Docu, ...)
+			-> Später auch Verwaltung des Repositorys
+			* Benötigt: - *
+		Research - 6 Personenstunden
+			-> Welches Programme werden benutzt (zB: Eclipse, Photoshop, ...)
+			-> Welche Bibiotheken werden beim Programmieren verwendet?
+			-> Einarbeitung in die jeweiligen Technologien
+			* Benötigt: - *
+		Testing - 10 Personenstunden
+			-> Aufsetzten von Testsystemen für Benutzertests (VMs mit verschidenen Betriebssystemen)
+			-> Wartung der UnitTests
+			-> Benutzertests
+
+
+
+Implementierungsphase:
+	Software:
+		Bau der Engine - 8 Personenstunden
+			-> Genaue Aufgaben folgen nach Entwurfsphase
+			-> Am Ende ist eine Engine fertig, auf der das Spiel aufbaut
+		Bau des Spiels - 8 Personenstunden
+			-> Genaue Aufgaben folgen nach Entwurfsphase
+			-> Am Ende ist das Spiel fertig		
+		UnitTests - 8 Personenstunden
+			-> Was getestet wird und ob getestet wird folgt nach der Entwurfphase
+		JavaDoc - 6 Personenstunden
+			-> Was kommentiert wird folgt nach der Entwurfphase
+			-> Werfolgt während dem Bau der Engine und des Spiels
+	Grafik-Design:
+		Erstellung der Grafiken für die GUI - 10 Personenstunden
+			-> Erstellung der Grafiken für Buttons etc.
+			-> Dabei auf einheitlichen Stil achten
+		Erstellung der Grafiken für die Minigames - 10 Personenstunden
+			-> Erstellung der Bilder für zB. die Wasserhähnse
+			-> Dabei auf einheitliches Stil achten
+		Documentation - 2 Personenstunden
+			-> Warum sehen die Grafiken so aus, wie sie es tun?
+			-> Wo finde ich welche Grafiken?
+			-> Wie erstelle ich neue Grafiken?
+	Programm-Design:
+		Erstellung der GUI - 10 Personenstunden
+			-> Programmierung der GUI-Componenten (in der Engine)
+			-> Zusammenfügen der Komponenten zu Menüs (in dem Game)
+		Erstellung der Level - 10 Personenstunden
+			-> Programmierung der MiniGame-Componenten (in der Engine)
+			-> Zusammenfügen der Komponenten zu Minigames (in dem Game)
+	Sonstiges:
+		Docu - 8 Personenstunden
+			-> Funktionen des Programs
+			-> Sonstige Docu?
+			 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
