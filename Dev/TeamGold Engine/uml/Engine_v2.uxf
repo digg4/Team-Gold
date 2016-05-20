@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>365</x>
+      <y>630</y>
+      <w>170</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.core::GameObject
+--
+/+ addComponent(Component): void/
+/+ forEachComponent(Consumer&lt;Component&gt;): void/
+/+ getComponent(Class&lt;Type&gt;): Type/
+/+ hasComponent(Class&lt;Type&gt;): boolean /
+/+ setScene(Scene): void /
+/+ getScene(): Scene/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>365</x>
+      <y>730</y>
+      <w>170</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.core::GameObjectImpl
+--
+- components: Map&lt;Class, Component&gt;
+- scene: Scene
+--
++ addComponent(Component): void
++ forEachComponent(Consumer&lt;Component&gt;): void
++ getComponent(Class&lt;Type&gt;): Type
++ hasComponent(Class&lt;Type&gt;): boolean
++ setScene(Scene): void
++ getScene(): Scene</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>630</y>
+      <w>160</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+dhbw.teamgold.engine.core::Component
+--
+- gameObject: GameObject
+--
+# getGameObject(): GameObject
+~ setGameObject(GameObject): void
++ onRender(RenderEvent): void
++ onRenderGui(RenderEvent): void
++ onRenderBackground(RenderEvent): void
++ onFixedUpdate(UpdateEvent): void
++ onMouseMove(MouseMoveEvent): void
++ onMousePress(MouseButtonEvent): void
++ onMouseReleased(MouseButtonEvent): void
++ onInitialize(): void
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>625</y>
+      <w>105</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+&lt; defines
+contains &gt;
+layer=0</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>535</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::RenderListener
+--
+/+ onRender(RenderEvent): void /
+/+ onRenderGui(RenderEvent): void/
+/+ onRenderBackground(RenderEvent): void/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>795</x>
+      <y>535</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::UpdateListener
+--
+/+ onFixedUpdate(UpdateEvent): void/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1050</x>
+      <y>535</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::MouseListener
+--
+/+ onMouseMove(MouseMoveEvent): void/
+/+ onMousePress(MouseButtonEvent): void/
+/+ onMouseRelease(MouseButtonEvent): void/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>695</x>
+      <y>580</y>
+      <w>15</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>695</x>
+      <y>580</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>360.0;10.0;360.0;40.0;10.0;40.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>695</x>
+      <y>580</y>
+      <w>445</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>870.0;10.0;870.0;40.0;10.0;40.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>355</y>
+      <w>160</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::RenderEvent
+--
+/+ getGraphics(): Graphics/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>795</x>
+      <y>355</y>
+      <w>160</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::UpdateEvent
+--
+/+ getDelta(): double/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>965</x>
+      <y>355</y>
+      <w>170</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::MouseMoveEvent
+--
+/+ getX(): double/
+/+ getY(): double/
+/+ getOldX(): double/
+/+ getOldY(): double/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>355</y>
+      <w>180</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::MouseButtonEvent
+--
+/+ getX(): double/
+/+ getY(): double/
+/+ causedByLeftButton(): boolean/
+/+ causedByRightButton(): boolean/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>430</y>
+      <w>160</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.event::RenderEventImpl
+--
+- graphics: Graphics
+--
++ getGraphics(): Graphics
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>795</x>
+      <y>430</y>
+      <w>160</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.event::UpdateEventImpl
+--
+- delta: double
+--
++ getDelta(): double
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>695</x>
+      <y>385</y>
+      <w>15</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>385</y>
+      <w>15</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>965</x>
+      <y>430</y>
+      <w>170</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.event::MouseMoveEventImpl
+--
+- newLocation: Point
+- oldLocation: Point
+--
++ getX(): double
++ getY(): double
++ getOldX(): double
++ getOldY(): double
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1145</x>
+      <y>430</y>
+      <w>175</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.event::MouseButtonEventImpl
+--
+- location: Point
+- mouseButton: int
+--
++ getX(): double
++ getY(): double
++ causedByLeftButton(): boolean
++ causedByRightButton(): boolean
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1045</x>
+      <y>405</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1225</x>
+      <y>405</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>100</x>
+      <y>610</y>
+      <w>690</w>
+      <h>255</h>
+    </coordinates>
+    <panel_attributes>Core Module
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>105</x>
+      <y>630</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.core::Prefab
+--
+/+ getGameObject(): GameObject/
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>635</y>
+      <w>75</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>105</x>
+      <y>705</y>
+      <w>200</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.core.prefabs::PlainGameObjectPrefab
+--
++ getGameObject(): GameObject
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>655</y>
+      <w>15</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+layer=0</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>620</x>
+      <y>335</y>
+      <w>875</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Event Module
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1330</x>
+      <y>535</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.event::InitListener
+--
+/+ onInititailize(): void/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>695</x>
+      <y>580</y>
+      <w>725</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>1430.0;10.0;1430.0;40.0;10.0;40.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>400</y>
+      <w>155</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;static class&gt;&gt;
+dhbw.teamgold.engine.service::Services
+--
+- providerMapping: Map&lt;Class, Provider&gt;
+- serviceCache: Map&lt;Class, Service&gt;
+--
+- ctor()
++ provide(Provider): void
++ get(Class&lt;Type&gt;): Type
++ injectInto(Object): void
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>495</y>
+      <w>155</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.service::Provider&lt;Type&gt;
+--
++ createService(): Type
++ getType(): Class&lt;Type&gt;
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>555</y>
+      <w>155</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.service::Service
+--
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>470</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+group=1</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>530</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+group=1</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>20</x>
+      <y>335</y>
+      <w>175</w>
+      <h>265</h>
+    </coordinates>
+    <panel_attributes>Service Module
+layer=-1
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>205</x>
+      <y>0</y>
+      <w>405</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>Default Services
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>215</y>
+      <w>185</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.services::SoundService
+--
+/+ playSoundOnce(Sound): void/
+/+ playSoundInLoop(Sound): void/
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>275</y>
+      <w>185</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::SoundServiceImpl
+--
++ playSoundOnce(Sound): void
++ playSoundInLoop(Sound): void
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>250</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>415</x>
+      <y>215</y>
+      <w>190</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::SoundServiceProvider
+--
+--
++ createService(): SoundService
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>220</y>
+      <w>35</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>340</y>
+      <w>185</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.services::AssetsService
+--
+/+ getImage(String): Image/
+/+ getSound(String): Sound/
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>400</y>
+      <w>185</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::AssetsServiceImpl
+--
+- imageCache: Map&lt;String, Image&gt;
+- soundCache: Map&lt;String, Sound&gt;
+--
++ getImage(String): Image
++ getSound(String): Sound
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>415</x>
+      <y>340</y>
+      <w>190</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::AssetsServiceProvider
+--
+--
++ createService(): ResourceService
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>345</y>
+      <w>35</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>375</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>480</y>
+      <w>185</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.services::GameObjectService
+--
+/+ createGameObject(): GameObject/
+/+ createGameObject(Class&lt;Prefab&gt;): GameObject/
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>540</y>
+      <w>185</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::GameObjectServiceImpl
+--
+- prefabCache: Map&lt;Class, Prefab&gt;
+--
++ createGameObject(): GameObject
++ createGameObject(Class&lt;Prefab&gt;): GameObject
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>515</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>415</x>
+      <y>480</y>
+      <w>190</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::GameObjectServiceProvider
+--
+--
++ createService(): ResourceService
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>485</y>
+      <w>35</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>355</y>
+      <w>155</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;annotation&gt;&gt;
+dhbw.teamgold.service::Inject
+--
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>375</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+group=1</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>20</y>
+      <w>185</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dhbw.teamgold.engine.services::EventService
+--
+/+ createRenderEvent(Graphics): RenderEvent/
+/+ createUpdateEvent(): UpdateEvent/
+/+ createMouseMoveEvent(Point): MouseMoveEvent/
+/+ createRightMouseButtonEvent(): MouseButtonEvent/
+/+ createLeftMouseButtonEvent(): MouseButtonEvent/
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>110</y>
+      <w>185</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::EventServiceImpl
+--
+- lastUpdateTime: double
+- lastMouseLocation: Point
+--
++ createRenderEvent(Graphics): RenderEvent
++ createUpdateEvent(): UpdateEvent
++ createMouseMoveEvent(Point): MouseMoveEvent
++ createRightMouseButtonEvent(): MouseButtonEvent
++ createLeftMouseButtonEvent(): MouseButtonEvent
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>80</y>
+      <w>15</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>415</x>
+      <y>20</y>
+      <w>190</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>dhbw.teamgold.engine.services::EventProvider
+--
+--
++ createService(): EventService
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>25</y>
+      <w>35</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+group=3</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>760</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+dhbw.teamgold.engine.scene::Scene
+--
+- gameObjects: List&lt;GameObject&gt;
+- game: StateBasedGame
+--
++ init(...): void
++ render(...): void
++ update(...): void
++ switchGameState(int): void
++ addGameObject(GameObject): void
+/# initializeGameObjects(): void/
+/+ getId(): int/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>445</x>
+      <y>700</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+layer=0</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>675</y>
+      <w>105</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=1
+&lt; contains
+make up &gt;
+</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0;90.0;220.0;190.0;220.0</additional_attributes>
+  </element>
+</diagram>
