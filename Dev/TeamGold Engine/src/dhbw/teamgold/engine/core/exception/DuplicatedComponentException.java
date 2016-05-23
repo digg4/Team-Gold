@@ -19,6 +19,7 @@ public class DuplicatedComponentException extends RuntimeException {
 	 *            The type of the Component.
 	 */
 	public DuplicatedComponentException(Class<? extends Component> type) {
+		super("There is already a component of type '" + type.getName() + "' attached to that GameObject");
 	}
 
 }
