@@ -1,12 +1,12 @@
-package dhbw.teamgold.game.mainmenu;
+package dhbw.teamgold.game.minigames;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
 
-public class MainMenuScene extends Scene {
+public class Game3Scene extends Scene {
 
-	public MainMenuScene() {
-		super(SceneIds.MAIN_MENU);
+	public Game3Scene() {
+		super(SceneIds.GAME_3);
 	}
 
 	@Override

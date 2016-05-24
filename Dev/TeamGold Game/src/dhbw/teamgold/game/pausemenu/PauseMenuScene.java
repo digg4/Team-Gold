@@ -1,12 +1,12 @@
-package dhbw.teamgold.game.mainmenu;
+package dhbw.teamgold.game.pausemenu;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
 
-public class MainMenuScene extends Scene {
+public class PauseMenuScene extends Scene {
 
-	public MainMenuScene() {
-		super(SceneIds.MAIN_MENU);
+	public PauseMenuScene() {
+		super(SceneIds.PAUSE_MENU);
 	}
 
 	@Override

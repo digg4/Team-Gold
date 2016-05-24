@@ -30,11 +30,14 @@ public interface UpdateArguments {
 	 * </pre>
 	 * 
 	 * By multiplying the speed with the time delta you make this motion very
-	 * smooth since no matter how fast/slow the game runs, the agend will run at
+	 * smooth since no matter how fast/slow the game runs, the agent will run at
 	 * a constant speed.
 	 * 
 	 * @return The time delta.
+	 * @deprecated You should not use this method anymore since you can use the
+	 *             seconds since last update in a much better way than this.
 	 */
+	@Deprecated
 	double getDelta();
 
 }

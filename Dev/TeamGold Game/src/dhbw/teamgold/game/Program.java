@@ -4,9 +4,10 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
 
 import dhbw.teamgold.engine.service.Services;
+import dhbw.teamgold.game.services.MiniGameChooserServiceProvider;
 
 public final class Program {
-	
+
 	private static final String NAME = "???";
 	private static final int WIDTH = 1280;
 	private static final int HEIGHT = 720;
@@ -16,7 +17,8 @@ public final class Program {
 
 	public static void main(String[] args) {
 		Services.registerDefaultProviders();
-		
+		registerCustomProviders();
+
 		try {
 			AppGameContainer game = new AppGameContainer(new _TeamGold_Game(NAME));
 			game.setDisplayMode(WIDTH, HEIGHT, FULLSCREEN);
@@ -27,8 +29,12 @@ public final class Program {
 			e.printStackTrace();
 		}
 	}
-	
+
+	private static void registerCustomProviders() {
+		Services.provide(new MiniGameChooserServiceProvider());
+	}
+
 	private Program() {
 	}
-	
+
 }
