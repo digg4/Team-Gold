@@ -6,6 +6,11 @@ import org.newdawn.slick.SlickException;
 import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.services.MiniGameChooserServiceProvider;
 
+/**
+ * A class to contain the main-method.
+ * 
+ * @author Daniel Spaniol
+ */
 public final class Program {
 
 	private static final String NAME = "???";
@@ -34,6 +39,9 @@ public final class Program {
 		Services.provide(new MiniGameChooserServiceProvider());
 	}
 
+	/**
+	 * Private so we don't instantiate this class.
+	 */
 	private Program() {
 	}
 

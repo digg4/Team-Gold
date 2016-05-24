@@ -1,5 +1,10 @@
 package dhbw.teamgold.game;
 
+/**
+ * An interface to hold all the Scene-ID constants.
+ * 
+ * @author Daniel Spaniol
+ */
 public interface SceneIds {
 	int SPLASH_SCREEN = 0;
 	int POST_GAME_SCREEN = 1;
@@ -17,7 +22,18 @@ public interface SceneIds {
 	int GAME_4 = 24;
 	int GAME_5 = 25;
 
-	int[] SCREENS_WITHOUT_ACTION = { SPLASH_SCREEN, POST_GAME_SCREEN, STATS_SCREEN };
+	/**
+	 * All the IDs of Scenes that should only show something to to user but
+	 * don't need any action of the user to be performed.
+	 */
+	int[] SCREENS_WITHOUT_INTERACTION = { SPLASH_SCREEN, POST_GAME_SCREEN, STATS_SCREEN };
+	/**
+	 * All the IDs of Scenes that contain mainly GUI elements and need the user
+	 * to perform actions.
+	 */
 	int[] MENUS = { MAIN_MENU, OPTIONS_MENU, PAUSE_MENU, GAME_OVER_MENU, TIME_OVER_MENU };
+	/**
+	 * All the IDs of mini-games.
+	 */
 	int[] GAMES = { GAME_1, GAME_2, GAME_3, GAME_4, GAME_5 };
 }

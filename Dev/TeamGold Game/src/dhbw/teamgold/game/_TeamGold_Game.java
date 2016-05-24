@@ -17,7 +17,12 @@ import dhbw.teamgold.game.postgamescreen.PostGameScreenScene;
 import dhbw.teamgold.game.splashscreen.SplashScreenScene;
 import dhbw.teamgold.game.timeovermenu.TimeOverMenuScene;
 
-
+/**
+ * The Game itself as provided by the Slick2D-engine. It is just a state-machine
+ * that delegates the updating and rendering etc to its current state.
+ * 
+ * @author Daniel Spaniol
+ */
 public class _TeamGold_Game extends StateBasedGame {
 
 	public _TeamGold_Game(String name) {
@@ -29,7 +34,7 @@ public class _TeamGold_Game extends StateBasedGame {
 		addScreensWithoutInteraction();
 		addMenus();
 		addMiniGames();
-		
+
 		this.enterState(SceneIds.SPLASH_SCREEN);
 	}
 

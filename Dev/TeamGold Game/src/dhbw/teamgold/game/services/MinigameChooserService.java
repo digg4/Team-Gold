@@ -17,4 +17,9 @@ public interface MinigameChooserService extends Service {
 	 */
 	int getNextMinigameId();
 
+	/**
+	 * @return The ID of the current mini-game.
+	 */
+	int getCurrentMinigameId();
+
 }
