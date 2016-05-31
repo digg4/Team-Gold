@@ -13,7 +13,7 @@ package dhbw.teamgold.engine.behavior;
 public interface UpdateBehavior {
 
 	/**
-	 * onFixedUpdate is called 60 times a second if possible. <br/>
+	 * onUpdate is called 60 times a second if possible. <br/>
 	 * You can override this method in order to define behavior which needs to
 	 * be executed over and over again at a fixed rate (for example physics
 	 * etc).
@@ -21,6 +21,6 @@ public interface UpdateBehavior {
 	 * @param arguments
 	 *            Some additional information which is useful for updating.
 	 */
-	void onFixedUpdate(UpdateArguments arguments);
+	void onUpdate(UpdateArguments arguments);
 
 }

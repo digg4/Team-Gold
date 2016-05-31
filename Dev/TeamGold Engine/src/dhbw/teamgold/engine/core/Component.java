@@ -61,7 +61,7 @@ public abstract class Component
 	}
 
 	@Override
-	public void onFixedUpdate(UpdateArguments arguments) {
+	public void onUpdate(UpdateArguments arguments) {
 	}
 
 	@Override

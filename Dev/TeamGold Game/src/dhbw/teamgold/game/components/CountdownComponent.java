@@ -69,7 +69,7 @@ public class CountdownComponent extends Component {
 	}
 
 	@Override
-	public void onFixedUpdate(UpdateArguments arguments) {
+	public void onUpdate(UpdateArguments arguments) {
 		if (secondsLeft > 0) {
 			secondsLeft -= arguments.getSecondsSinceLastUpdate();
 		}

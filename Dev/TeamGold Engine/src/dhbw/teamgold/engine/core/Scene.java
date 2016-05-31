@@ -96,7 +96,7 @@ public abstract class Scene extends BasicGameState {
 	public final void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		UpdateArguments arguments = behaviorArgumentService.createUpdateArguments();
 
-		forEachComponent(component -> component.onFixedUpdate(arguments));
+		forEachComponent(component -> component.onUpdate(arguments));
 	}
 
 	@Override
