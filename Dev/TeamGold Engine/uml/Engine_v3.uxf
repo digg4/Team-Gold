@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>305</x>
+      <y>355</y>
+      <w>180</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>GameObjectImpl
+--
+- components: Map&lt;Class, Component&gt;
+- scene: Scene
+--
++ addComponent(Component): void
++ forEachComponent(Consumer&lt;Component&gt;): void
++ hasComponent(Class&lt;Component&gt;): boolean
++ getComponent(Class&lt;Type&gt;): Type
++ setScene(Scene): void
++ getScene(): Scene
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>295</y>
+      <w>15</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>230</y>
+      <w>170</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Component
+--
+- gameObject: GameObject
+--
+~ getGameObject(): GameObject
+# setGameObject(GameObject): void
++ onRender(RenderArguments): void
++ onRenderGui(RenderArguments): void
++ onRenderBackground(RenderArguments): void
++ onUpdate(UpdateArguments): void
++ onInitializeComponents(InitializeArguments): void
++ onInitializeGameObject(InitializeArguments): void
++ onMouseMove(MouseMoveArguments): void
++ onMousePress(MouseButtonArguments): void
++ onMouseRelease(MouseReleaseArguments): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>240</y>
+      <w>80</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>240</y>
+      <w>70</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>255</x>
+      <y>230</y>
+      <w>60</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=provide
+</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>305</x>
+      <y>230</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+GameObject
+--
+/+ addComponent(Component): void/
+/+ forEachComponent(Consumer&lt;Component&gt;): void/
+/+ hasComponent(Class&lt;Component&gt;): boolean/
+/+ getComponent(Class&lt;Type&gt;): Type/
+/+ setScene(Scene): void/
+/+ getScene(): Scene/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>115</x>
+      <y>230</y>
+      <w>145</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Prefab
+--
+/+ getGameObject(): GameObject/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>115</x>
+      <y>355</y>
+      <w>140</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>PlainGameObjectPrefab
+--
++ getGameObject(): GameObject</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>255</y>
+      <w>15</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>305</x>
+      <y>60</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Scene
+--
+_- behaviorArgumentService: BehaviorArgumentService_
+_- gameObjectService: GameObjectService_
+- gameObjects: List&lt;GameObject&gt;
+- game: StateBasedGame
+- id: int
+--
++ ctor(int)
++ createGameObject(Prefab): GameObject
++ addGameObject(GameObject): void
++ addGameObject(Prefab): void
++ getSceneWidth(): int
++ getSceneHeight(): int
+/~ initializeGameObject/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>175</y>
+      <w>15</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>105</x>
+      <y>40</y>
+      <w>625</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>Core-Module</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>60</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+RenderBehavior
+--
+/+ onRender(RenderArguments): void/
+/+ onRenderGui(RenderArguments): void/
+/+ onRenderBackground(RenderArguments): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>60</y>
+      <w>135</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+RenderArguments
+-
+/+ getGraphics(): Graphics/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>125</y>
+      <w>135</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>RenderArgumentsImpl
+-
+- graphics: Graphics
+-
++ getGraphics(): Graphics</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1055</x>
+      <y>90</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>955</x>
+      <y>65</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>780</x>
+      <y>40</y>
+      <w>360</w>
+      <h>710</h>
+    </coordinates>
+    <panel_attributes>Behavior-Module</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>180</y>
+      <w>170</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+UpdateBehavior
+--
+/+ onUpdate(UpdateArguments): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>180</y>
+      <w>135</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+UpdateArguments
+-
+/+ getSecondsSinceLastUpdate(): double/
+/+ getDelta(): double/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>250</y>
+      <w>135</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>RenderArgumentsImpl
+-
+- secondsSinceLastUpdate: double
+-
++ getSecondsSinceLastUpdate(): double
++ getDelta(): double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>955</x>
+      <y>185</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1055</x>
+      <y>215</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>315</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+InitializeBehavior
+--
+/+ onInitializeComponents(InitializeArguments): void/
+/+ onInitializeGameObject(InitializeArguments): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>315</y>
+      <w>135</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+InitializeArguments
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>360</y>
+      <w>135</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>InitializeArgumentsImpl
+-
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1055</x>
+      <y>335</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>955</x>
+      <y>320</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>395</y>
+      <w>170</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MouseMoveBehavior
+--
+/+ onMouseMove(MouseMoveArguments): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>395</y>
+      <w>135</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MouseMoveArguments
+-
+/+ getX(): double/
+/+ getY(): double/
+/+ getOldX(): double/
+/+ getOldY(): double/
+/+ getTraveledX(): double/
++ getTraveledY(): double/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>490</y>
+      <w>135</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>MouseMoveArguments
+-
+- oldPosition: Point
+- newPosition: Point
+-
+/+ getX(): double/
+/+ getY(): double/
+/+ getOldX(): double/
+/+ getOldY(): double/
+/+ getTraveledX(): double/
++ getTraveledY(): double/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>955</x>
+      <y>400</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1055</x>
+      <y>460</y>
+      <w>15</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>590</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MouseButtonBehavior
+--
+/+ onMousePress(MouseButtonArguments): void/
+/+ onMouseRelease(MouseReleaseArguments): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>590</y>
+      <w>135</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MouseButtonArguments
+-
+/+ getX(): double/
+/+ getY(): double/
+/+ isCausedByLeftButton(): boolean/
+/+ isCausedByRightButton(): boolean/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>995</x>
+      <y>675</y>
+      <w>135</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>MouseButtonArguments
+-
+- position: Point
+- button: int
+-
++ getX(): double
++ getY(): double
++ isCausedByLeftButton(): boolean
++ isCausedByRightButton(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>955</x>
+      <y>595</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1055</x>
+      <y>640</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>65</y>
+      <w>85</w>
+      <h>185</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>150.0;10.0;80.0;10.0;80.0;350.0;10.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>185</y>
+      <w>85</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>150.0;10.0;80.0;10.0;80.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>235</y>
+      <w>85</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>150.0;180.0;80.0;180.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>235</y>
+      <w>85</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>150.0;340.0;80.0;340.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>235</y>
+      <w>85</w>
+      <h>375</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>150.0;730.0;80.0;730.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>115</x>
+      <y>60</y>
+      <w>140</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+PrototypePrefab
+--
+_- gameObjectService: GameObjectService_
+- prototype: Prefab
+--
++ ctor(Prefab)
+~ clonePrototype(): GameObject
+/+ getGameObject(): GameObject/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>120</y>
+      <w>15</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>60</y>
+      <w>170</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;annotation&gt;&gt;
+Require
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>80</y>
+      <w>15</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;300.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>105</x>
+      <y>480</y>
+      <w>165</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Service-Module</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>115</x>
+      <y>500</y>
+      <w>140</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;annotation&gt;&gt;
+Inject
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>115</x>
+      <y>545</y>
+      <w>140</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;static class&gt;&gt;
+Services
+--
+_- providerMapping: Map&lt;Class, Provider&gt;_
+_- serviceCache: Map&lt;Class, Service&gt;_
+--
+- ctor()
+_+ register(Provider): void_
+_+ registerDefaultProviders(): void_
+_+ get(Class&lt;ServiceType&gt;): ServiceType_
+_+ injectInto(Object): void_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>645</y>
+      <w>135</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>template=T: Service
+&lt;&lt;interface&gt;&gt;
+Provider
+--
+/+ createService(): T/
+/+ getServiceType(): Class&lt;T&gt;/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>715</y>
+      <w>140</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Service
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>185</x>
+      <y>520</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>185</x>
+      <y>625</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>185</x>
+      <y>690</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>295</x>
+      <y>480</y>
+      <w>435</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Default Services</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>305</x>
+      <y>500</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+GameObjectService
+--
+/+ createGameObject(): GameObject/
+/+ createGameObject(Prefab): GameObject/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>305</x>
+      <y>580</y>
+      <w>200</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+BehaviorArgumentService
+--
+/+ createRenderArguments(Graphics): RenderArguments/
+/+ createUpdateArguments(): UpdateArguments/
+/+ createInitializeArguments(): InitializeArguments/
+/+ createMouseMoveArguments(Point): MouseMoveArguments/
+/+ createMouseButtonArguments(int): MouseButtonArguments/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>305</x>
+      <y>695</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+AssetsService
+--
+/+ getImage(String): Image/
+/+ getSound(String): Sound/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>255</x>
+      <y>505</y>
+      <w>60</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;440.0;50.0;440.0;50.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>255</x>
+      <y>585</y>
+      <w>60</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;280.0;50.0;280.0;50.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>255</x>
+      <y>700</y>
+      <w>60</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;50.0;50.0;50.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>555</x>
+      <y>500</y>
+      <w>165</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>template=T: GameObjectService
+GameObjectServiceProvider
+--
+/+ createService(): T/
+/+ getServiceType(): Class&lt;T&gt;/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>555</x>
+      <y>580</y>
+      <w>165</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>template=T: BehaviorArgumentService
+BehaviorArgumentServiceProvider
+--
+/+ createService(): T/
+/+ getServiceType(): Class&lt;T&gt;/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>500</y>
+      <w>65</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=provide
+</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>580</y>
+      <w>65</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=provide
+</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>555</x>
+      <y>690</y>
+      <w>165</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>template=T: AssetsService
+AssetsServiceProvider
+--
+/+ createService(): T/
+/+ getServiceType(): Class&lt;T&gt;/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>695</y>
+      <w>65</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=provide
+</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>
