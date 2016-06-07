@@ -8,6 +8,7 @@ import dhbw.teamgold.game.gameoverscreen.GameOverMenuScene;
 import dhbw.teamgold.game.mainmenu.MainMenuScene;
 import dhbw.teamgold.game.optionsmenu.OptionsMenuScene;
 import dhbw.teamgold.game.pausemenu.PauseMenuScene;
+import dhbw.teamgold.game.postgamescreen.PostGameScreenScene;
 import dhbw.teamgold.game.splashscreen.SplashScreenScene;
 import dhbw.teamgold.game.statsscreen.StatsScreenScene;
 import dhbw.teamgold.game.timeoverscreen.TimeOverMenuScene;
@@ -33,6 +34,7 @@ public class _TeamGold_Game extends StateBasedGame {
 		this.addState(new PauseMenuScene());
 		this.addState(new StatsScreenScene());
 		this.addState(new TimeOverMenuScene());
+		this.addState(new PostGameScreenScene());
 		
 		this.enterState(SceneIds.GAME_OVER_MENU);
 	}
