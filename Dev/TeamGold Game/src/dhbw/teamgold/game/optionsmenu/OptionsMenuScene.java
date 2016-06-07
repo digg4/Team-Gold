@@ -1,6 +1,7 @@
-package dhbw.teamgold.game;
+package dhbw.teamgold.game.optionsmenu;
 
 import dhbw.teamgold.engine.core.Scene;
+import dhbw.teamgold.game.SceneIds;
 
 public class OptionsMenuScene extends Scene {
 

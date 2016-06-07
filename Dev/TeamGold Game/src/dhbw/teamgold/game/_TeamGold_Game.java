@@ -6,6 +6,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 import dhbw.teamgold.game.gameoverscreen.GameOverMenuScene;
 import dhbw.teamgold.game.mainmenu.MainMenuScene;
+import dhbw.teamgold.game.optionsmenu.OptionsMenuScene;
 import dhbw.teamgold.game.splashscreen.SplashScreenScene;
 
 /**
