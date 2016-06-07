@@ -4,6 +4,8 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
+import dhbw.teamgold.game.mainmenu.MainMenuScene;
+
 /**
  * The Game itself as provided by the Slick2D-engine. It is just a state-machine
  * that delegates the updating and rendering etc to its current state.
@@ -18,6 +20,7 @@ public class _TeamGold_Game extends StateBasedGame {
 
 	@Override
 	public void initStatesList(GameContainer container) throws SlickException {
+		this.addState(new MainMenuScene());
 	}
 
 }
