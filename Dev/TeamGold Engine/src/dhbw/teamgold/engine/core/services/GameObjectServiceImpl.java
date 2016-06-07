@@ -87,9 +87,9 @@ public class GameObjectServiceImpl implements GameObjectService {
 	 *         false otherwise.
 	 */
 	private boolean fieldIsRequiredComponent(Field field) {
-		boolean isComponent = Component.class.isAssignableFrom(field.getClass());
+		boolean isComponent = Component.class.isAssignableFrom(field.getType());
 		boolean isRequired = field.isAnnotationPresent(Require.class);
-
+		
 		return isRequired && isComponent;
 	}
 

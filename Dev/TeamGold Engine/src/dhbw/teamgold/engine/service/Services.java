@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import dhbw.teamgold.engine.behavior.services.BehaviorArgumentServiceProvider;
+import dhbw.teamgold.engine.core.services.AssetsServiceProvider;
 import dhbw.teamgold.engine.core.services.GameObjectServiceProvider;
 import dhbw.teamgold.engine.service.exception.DuplicatedProviderException;
 import dhbw.teamgold.engine.service.exception.NoSuchProviderException;
@@ -121,6 +122,7 @@ public final class Services {
 	public static void registerDefaultProviders() {
 		Services.provide(new GameObjectServiceProvider());
 		Services.provide(new BehaviorArgumentServiceProvider());
+		Services.provide(new AssetsServiceProvider());
 	}
 
 	/**
