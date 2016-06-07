@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Sound;
 
 import dhbw.teamgold.engine.core.exception.AssetNotFoundException;
