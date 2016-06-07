@@ -9,6 +9,7 @@ import dhbw.teamgold.game.mainmenu.MainMenuScene;
 import dhbw.teamgold.game.optionsmenu.OptionsMenuScene;
 import dhbw.teamgold.game.pausemenu.PauseMenuScene;
 import dhbw.teamgold.game.splashscreen.SplashScreenScene;
+import dhbw.teamgold.game.statsscreen.StatsScreenScene;
 
 /**
  * The Game itself as provided by the Slick2D-engine. It is just a state-machine
@@ -29,6 +30,7 @@ public class _TeamGold_Game extends StateBasedGame {
 		this.addState(new GameOverMenuScene());
 		this.addState(new OptionsMenuScene());
 		this.addState(new PauseMenuScene());
+		this.addState(new StatsScreenScene());
 		
 		this.enterState(SceneIds.GAME_OVER_MENU);
 	}
