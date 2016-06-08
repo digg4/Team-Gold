@@ -11,6 +11,10 @@ public interface GameStatsService extends Service {
 	
 	void addScore(int scoreToAdd);
 	
-	void looseLive();
+	void loseLive();
+	
+	boolean isGameOver();
+	
+	void increaseDifficulty();
 	
 }

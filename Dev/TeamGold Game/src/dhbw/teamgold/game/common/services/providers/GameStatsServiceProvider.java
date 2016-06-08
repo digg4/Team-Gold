@@ -45,8 +45,18 @@ public class GameStatsServiceProvider implements Provider<GameStatsService> {
 		}
 
 		@Override
-		public void looseLive() {
+		public void loseLive() {
 			stats.setLives(stats.getLives() - 1);
+		}
+
+		@Override
+		public boolean isGameOver() {
+			return stats.getLives() <= 0;
+		}
+
+		@Override
+		public void increaseDifficulty() {
+			stats.setDifficulty(stats.getDifficulty() + 1);
 		}
 	}
 }
