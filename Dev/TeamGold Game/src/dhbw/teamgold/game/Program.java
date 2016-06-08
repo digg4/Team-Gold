@@ -4,7 +4,10 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
 
 import dhbw.teamgold.engine.service.Services;
-import dhbw.teamgold.game.services.MiniGameChooserServiceProvider;
+import dhbw.teamgold.game.common.services.providers.GameStatsPersistenceServiceProvider;
+import dhbw.teamgold.game.common.services.providers.GameStatsServiceProvider;
+import dhbw.teamgold.game.common.services.providers.GameTimeServiceProvider;
+import dhbw.teamgold.game.common.services.providers.HighscoreServiceProvider;
 
 /**
  * A class to contain the main-method.
@@ -13,7 +16,7 @@ import dhbw.teamgold.game.services.MiniGameChooserServiceProvider;
  */
 public final class Program {
 
-	private static final String NAME = "???";
+	private static final String NAME = "TeamGold Game";
 	private static final int WIDTH = 1280;
 	private static final int HEIGHT = 720;
 	private static final boolean FULLSCREEN = false;
@@ -36,7 +39,10 @@ public final class Program {
 	}
 
 	private static void registerCustomProviders() {
-		Services.provide(new MiniGameChooserServiceProvider());
+		Services.provide(new GameStatsPersistenceServiceProvider());
+		Services.provide(new HighscoreServiceProvider());
+		Services.provide(new GameTimeServiceProvider());
+		Services.provide(new GameStatsServiceProvider());
 	}
 
 	/**
