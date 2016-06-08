@@ -5,6 +5,7 @@ import org.newdawn.slick.SlickException;
 
 import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.common.services.providers.GameStatsPersistenceServiceProvider;
+import dhbw.teamgold.game.common.services.providers.GameStatsServiceProvider;
 import dhbw.teamgold.game.common.services.providers.GameTimeServiceProvider;
 import dhbw.teamgold.game.common.services.providers.HighscoreServiceProvider;
 
@@ -41,6 +42,7 @@ public final class Program {
 		Services.provide(new GameStatsPersistenceServiceProvider());
 		Services.provide(new HighscoreServiceProvider());
 		Services.provide(new GameTimeServiceProvider());
+		Services.provide(new GameStatsServiceProvider());
 	}
 
 	/**
