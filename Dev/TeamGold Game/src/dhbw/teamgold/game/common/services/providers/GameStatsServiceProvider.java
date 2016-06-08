@@ -20,6 +20,7 @@ public class GameStatsServiceProvider implements Provider<GameStatsService> {
 
 		private static final int START_LIVES = 3;
 		private static final int START_SCORE = 0;
+		private static final int START_DIFFICULTY = 0;
 		
 		private TransientGameStats stats;
 		
@@ -37,6 +38,7 @@ public class GameStatsServiceProvider implements Provider<GameStatsService> {
 			stats = new TransientGameStats();
 			stats.setLives(START_LIVES);
 			stats.setScore(START_SCORE);
+			stats.setDifficulty(START_DIFFICULTY);
 		}
 
 		@Override
