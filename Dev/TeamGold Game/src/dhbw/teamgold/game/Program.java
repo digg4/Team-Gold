@@ -13,7 +13,7 @@ import dhbw.teamgold.game.common.services.providers.GameStatsPersistenceServiceP
  */
 public final class Program {
 
-	private static final String NAME = "???";
+	private static final String NAME = "TeamGold Game";
 	private static final int WIDTH = 1280;
 	private static final int HEIGHT = 720;
 	private static final boolean FULLSCREEN = false;
