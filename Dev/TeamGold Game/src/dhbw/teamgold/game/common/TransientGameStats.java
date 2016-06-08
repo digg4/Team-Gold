@@ -4,6 +4,7 @@ public class TransientGameStats {
 
 	private int score;
 	private int lives;
+	private int difficulty;
 
 	public int getScore() {
 		return score;
@@ -19,6 +20,14 @@ public class TransientGameStats {
 
 	public void setLives(int lives) {
 		this.lives = lives;
+	}
+	
+	public int getDifficulty() {
+		return difficulty;
+	}
+	
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
 	}
 
 }
