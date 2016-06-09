@@ -1,0 +1,594 @@
+<html>
+
+<head>
+	<title>Game-Programming</title>
+	
+	<style>
+		body {
+			margin-left: 25%;
+			margin-right: 25%;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 10px;
+			box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+		}
+	
+		pre {
+			margin-left: 20px;
+			padding: 5px;
+			border: 1px dashed grey;
+			background-color: #F9F9DD;
+			overflow: auto;
+		}
+		
+		pre >span {
+			width: 100%;
+			display: inline-block;
+		}
+		
+		pre span:nth-of-type(odd) {
+			background-color: #F5F5F5;
+		}
+		
+		.LineNumber {
+			margin-right: 10px;
+			width: 20px;
+			display: inline-block;
+			border-right: 1px solid rgba(0, 0, 0, 0.2);
+		}
+		
+		.Keyword {
+			color: #AA00AA;
+		}
+		
+		.Comment {
+			color: green;
+		}
+		
+		.Annotation {
+			color: grey;
+		}
+	</style>
+</head>
+
+<body>
+
+	<p>
+		<h2>Game-Programming mit der TeamGold-Engine</h2>
+		Dieses Dokument soll einen Einblick darin geben, wie man mit der TeamGold-Engine ein einfaches Spiel programmiert.<br/>
+		Für diesen Zweck wird hier ein kleines "Spiel" entwickelt, das 5 Sekunden lang einen Countdown anzeigt und danach in den nächsten Zustand wechselt. In diesem befindet sich dann ein Button mit dem man wieder zurück gelangt.<br/>
+		Es werden kurz die Konzepte von <strong>Scenes</strong>, <strong>Components</strong>, <strong>GameObjects</strong> und den <strong>Prefabs</strong> vorgestellt. <br/>
+		Grundsätzlich besteht jedes Spiel aus mehren Zuständen, die bei uns Scenes genannt werden. Scenes enthalten GameObjects, die definieren, was in den Spiel passiert. Alles was man sieht (oder auch nicht sieht) ist ein GameObject. Nicht jedes GameObject muss auch auf dem Bildschirm sichtbar sein, es könnte zB im Hintergrund ein Countdown laufen, der nicht gezeichnet wird, dieser wäre trotzdem ein GameObject. Damit keine riesigen Vererbungsbeziehungen entstehen, verwenden wir Components um die GameObjects zu definieren. Dabei soll eine Component so abstrakt wie möglich sein und genau eine Aufgabe übernehemen, damit man sie in möglichst vielen GameObjects wiederverwenden kann. Schließlich sind die Prefabs noch da um die Components an GameObjects zu binden und Einstellungen zu setzten.
+	</p>
+
+	<p>
+		Für das ExampleGame brauchen wir folgende Klassen:
+		<code>
+			<ul>
+				<li><a href="#ExampleGame">dhbw.teamgold.game.<strong>ExampleGame</strong></a></li>
+				<li><a href="#SceneIds">dhbw.teamgold.game.<strong>SceneIds</strong></a></li>
+				<li><a href="#AreaComponent">dhbw.teamgold.game.common.components.<strong>AreaComponent</strong></a></li>
+				<li><a href="#CountdownComponent">dhbw.teamgold.game.common.components.<strong>CountdownComponent</strong></a></li>
+				<li><a href="#ImageComponent">dhbw.teamgold.game.common.components.<strong>ImageComponent</strong></a></li>
+				<li><a href="#ImageRendererComponent">dhbw.teamgold.game.common.components.<strong>ImageRendererComponent</strong></a></li>
+				<li><a href="#MouseClickComponent">dhbw.teamgold.game.common.components.<strong>MouseClickComponent</strong></a></li>
+				<li><a href="#ButtonPrefab">dhbw.teamgold.game.common.prefabs.<strong>ButtonPrefab</strong></a></li>
+				<li><a href="#BackgroundImagePrefab">dhbw.teamgold.game.common.prefabs.<strong>BackgroundImagePrefab</strong></a></li>
+				<li><a href="#Scene1">dhbw.teamgold.game.scene1.<strong>Scene1</strong></a></li>
+				<li><a href="#CountdownRendererComponent">dhbw.teamgold.game.scene1.components.<strong>CountdownRendererComponent</strong></a></li>
+				<li><a href="#CountdownPrefab">dhbw.teamgold.game.scene1.prefabs.<strong>CountdownPrefab</strong></a></li>
+				<li><a href="#Scene2">dhbw.teamgold.game.scene2.<strong>Scene2</strong></a></li>
+				<li><a href="#EnterScene1ButtonPrefab">dhbw.teamgold.game.scene2.prefabs.<strong>EnterScene1ButtonPrefab</strong></a></li>
+			</ul>
+		</code>
+		<i>Hier fehlt noch die main... aber die ist nicht besonders interessant und existiert schon im TeamGold-Projekt</i>
+	</p>
+	
+	<p>
+		<a name="ExampleGame"></a>
+		<h4>ExampleGame</h4>
+		Jedes Spiel hat genau eine Klasse, die von <code>StateBasedGame</code> erbt. Diese Klasse ist im Grunde der Container, der alle GameStates (bei uns <code>Scenes</code>) enthält.
+		Hier muss man einfach nur alle <code>Scenes</code> hinzufügen und die Start-<code>Scene</code> festlegen.
+		<pre>
+public class ExampleGame extends StateBasedGame {
+	
+	public ExampleGame() {
+		super("NAME");
+	}
+	
+	@Override
+	public void initStateList() {
+		this.addState(new Scene1());
+		this.addState(new Scene2());
+		this.enterState(SceneIds.SCENE_1);
+	}
+}</pre>
+		<i>Diese Klasse ist im TeamGold-Projekt bereits angelegt und es müssen nur noch die <code>Scenes</code> hintugeüft werden.</i>
+	</p>
+	
+	<p>
+		<a name="SceneIds"></a>
+		<h4>SceneIds</h4>
+		Jedes Spiel sollte eine Klasse haben, in der die Scene-IDs gespeichert werden. Man könnte sie auch immer in der jeweiligen <code>Scene</code> speichern, aber es ist besser einen zentralen Ort dafür zu haben.
+		<pre>
+public interface SceneIds {
+	int SCENE_1 = 1;
+	int SCENE_2 = 2;
+}</pre>
+		<i>Dieses Interface ist im TeamGold-Projekt bereits angelegt und muss eigentlich nicht mehr erweitert werden.</i>
+	</p>
+	
+	<p>
+		<a name="AreaComponent"></a>
+		<h4>AreaComponent</h4>
+		Die <code>AreaComponent</code> in diesem Beispiel dient dazu, dass man einem <code>GameObject</code> (zum Beispiel einem Button) sagen kann, welchen Platz auf dem Bildschirm es einnimmt. <br/>
+		Dazu übergibt man die relativen Koordinaten und Abmessungen. Andere <code>Components</code> können dann später diese Daten verwenden.
+		<pre>
+public class AreaComponent extends Component {
+
+	private float relativeX;
+	private float relativeY;
+	private float relativeWidth;
+	private float relativeHeight;
+	
+	private float screenWidth;
+	private float screenHeight;
+	
+	AreaComponent(float relativeX, relativeY, ....) {
+		<i>set all the fields...</i>
+	}
+	
+	// In dieser Methode hat man Zugriff auf die Scene
+	@Override
+	public void onInitializeGameObject(InitializeArguments args) {
+		screenWidth = getGameObject().getScene().getSceneWidth();
+		screenHeight = getGameObject().getScene().getSceneHeight();
+	}
+	
+	public Rectangle getAbsoluteArea() {
+		return new Rectangle(x * screenWidth, y * screenHeight, ...);
+	}
+}</pre>
+		An dieser Beispiel-<code>Component</code> kann man schon vieles erkennen, was eine <code>Component</code> kann. <br/>
+		Man kann einige <code>on...</code>-Methoden (Behavior-Methoden) überschreiben, <code>onInitializeGameObject</code> wird aufgerufen, wenn das <code>GameObject</code> der <code>Component</code> der <code>Scene</code> hinzugefügt wurde.
+		Für eine Liste aller Methoden siehe Behavior-Modul.
+	</p>
+	
+	<p>
+		<a name="ImageComponent"></a>
+		<h4>ImageComponent</h4>
+		Die <code>ImageComponent</code> dient dazu, ein Image-Object zu speichern und wird zusammen mit der <code>AreaComponent</code> von der <code>ImageRendererComponent</code> benutzt.
+		<pre>
+public class ImageComponent {
+	
+	private Image image;
+	
+	public ImageComponent(String imageFile) {
+		image = Services.get(AssetsService.class).getImage(imageFile);
+	}
+	
+	public Image getImage() {
+		return image;
+	}
+	
+}</pre>
+		Auch das hier ist eine <code>Component</code>, die "nur" Daten speichert und sonst nichts macht. An ihr kann man aber sehen, wie man <code>Services</code> benutzt, um zum Beispiel an Assets zu kommen.
+	</p>
+	
+	<p>
+		<a name="ImageRendererComponent"></a>
+		<h4>ImageRendererComponent</h4>
+		Die <code>ImageRendererComponent</code> benutzt zwei bereits definierte <code>Components</code> um ein Image-Object auf dem Bildschirm zu zeichnen.
+		<pre>
+public class ImageRendererComponent extends Component {
+
+	@Require
+	private ImageComponent imageComponent;
+	
+	@Require
+	private AreaComponent areaComponent;
+	
+	// Das kann man eleganter durch Polymorphie oder Ähnliches lösen, aber für das Demo-Szenario reicht ein enum aus.
+	private RenderLayer layer = RenderLayer.GAME_LAYER; 
+	
+	public void setRenderLayer(RenderLayer layer) {
+		this.layer = layer;
+	}
+	
+	private void drawImage() {
+		float x = areaComponent.getAbsoluteArea().getX();
+		float y = areaComponent.getAbsoluteArea().getY();
+		float width = areaComponent.getAbsoluteArea().getWidth();
+		float height = areaComponent.getAbsoluteArea().getHeight();
+		
+		// Die richtige Methoden-Signatur könnte etwas anders sein... bin mir nicht ganz sicher :D
+		imageComponent.getImage().draw(x, y, width, height);
+	}
+	
+	@Override
+	public void onRenderGui(RenderArguments args) {
+		if (layer == RenderLayer.GUI_LAYER) {
+			drawImage();
+		}
+	}
+	
+	@Override
+	public void onRender(RenderArguments args) {
+		if (layer == RenderLayer.GAME_LAYER) {
+			drawImage();
+		}
+	}
+	
+	@Override
+	public void onRenderBackground(RenderArguments args) {
+		if (layer == RenderLayer.BACKGROUND_LAYER) {
+			drawImage();
+		}
+	}
+	
+	public enum RenderLayer { GAME_LAYER, GUI_LAYER, BACKGROUND_LAYER }
+	
+}</pre>
+		An dieser <code>Component</code> kann man noch eine weitere wichtige Funktionalität sehen: <br/>
+		Jede <code>Component</code> kann andere <code>Components</code> ihres <code>GameObjects</code> anfordern. <br/>
+		Am einfachsten geht das mit <code>@Require</code>.
+		<br/><br/>
+		Diese drei <code>Components</code> sollen auch zeigen, wie man die Funktionalität und Daten eines <code>GameObjects</code> in <code>Components</code> auslagert. <br/>
+		Dadurch besitzt alles, was eine Fläche hat einfach eine <code>AreaComponent</code>, und alles was ein Bild rendern soll die drei gezeigten <code>Components</code>.
+	</p>
+	
+	<p>
+		<a name="CountdownComponent"></a>
+		<h4>CountdownComponent</h4>
+		Die <code>CountdownComponent</code> führt nach 5 Sekunden eine gegeben Funktion aus. An ihr kann man die Verwendung der <code>update</code>-Methode sehen. <br/>
+		Alles, was in einem festen Interval aktualisiert werden muss (zB Physik) sollte auf die gleiche Weise gemacht werden.
+		<pre>
+public class CountdownComponent extends Component {
+
+	private static final Runnable DO_NOTHING = () -> {};
+
+	private float secondsLeft = 5;
+	private boolean done = false;
+	private Runnable callback = DO_NOTHING;
+	
+	public void onEnd(Runnable callback) {
+		if (callback == null) {
+			callback = DO_NOTHING;
+		}
+		this.callback = callback;
+	}
+	
+	public float getPercentDone() {
+		// Math.min damit wir keine Werte größer 1 haben
+		return Math.min(1, 1 - (secondsLeft / 5));
+	}
+	
+	@Override
+	public void onUpdate(UpdateArguments args) {
+		if (secondsLeft &gt; 0) {
+			secondsLeft -= args.getSecondsSinceLastUpdate();
+		}
+		
+		if (secondsLeft &lt;= 0 && !done) {
+			callback.run();
+			done = true;
+		}
+	}
+}</pre>
+	</p>
+	
+	<p>
+		<a name="MouseClickComponent"></a>
+		<h4>MouseClickComponent</h4>
+		Diese <code>Component</code> zeigt noch, wie man Mouse-Input behandeln kann.
+		
+		<pre>
+public class MouseClickComponent extends Component {
+
+	@Require
+	private AreaComponent areaComponent;
+
+	private List&lt;Listener&gt; listeners = new LinkedList&lt;&gt;();
+
+	public void addListener(Listener listener) {
+		listeners.add(listener);
+	}
+	
+	@Override
+	public void onMouseClick(MouseButtonArguments args) {
+		double x = args.getX();
+		double y = args.getY();
+		
+		if (areaComponent.contains(x, y)) {
+			listeners.forEach(listener -> listener.onClick(x, y));
+		}
+	}
+	
+	public static interface Listener {
+		void onClick(double xOnScreen, double yOnScreen);
+	}
+}</pre>
+		Hier sieht man auch wieder die Funktionalität von <code>Components</code>. Man kann auf andere <code>Components</code> zugreifen, Behavior-Methoden überschreiben, ... <br/>
+		Auch die Wiederverwendbarkeit kann man hier sehen, denn alles, was sich anklicken lässt, muss auch eine Fläche haben.
+	</p>
+	
+	<p>
+		<a name="ButtonPrefab"></a>
+		<h4>ButtonPrefab</h4>
+		In jeder <code>Scene</code> dreht sich alles um <code>GameObjects</code>. Damit man die aber nicht immer von Hand mit ihren <code>Components</code> versehen muss, gibt es <Code>Prefabs</code>. <br/>
+		Im Grunde sind <code>Prefabs</code> einfache initialize-Code-Blöcke, die man an den <code>GameObjectService</code> übergeben kann, damit der das <code>GameObject</code> erstellt und es richtig initialisiert.
+		
+		<pre>
+public class ButtonPrefab implements Prefab {
+
+	private static final String BACKGROUND_IMAGE = "button_background.png";
+
+	private GameObjectService gameObjectService = Services.get(GameObjectService.class);
+	
+	private Rectangle relativeBounds;
+	private Runnable onClickCallback;
+	
+	public ButtonPrefab(Rectangle bounds, Runnable callback) {
+		relativeBounds = bounds;
+		onClickCallback = callback;
+	}
+	
+	@Override
+	public void getGameObject() {
+		GameObject object = gameObjectService.createGameObject();
+		
+		AreaComponent area = new AreaComponent(relativeBounds.getX(), ...);
+		ImageComponent image = new ImageComponent(BACKGROUND_IMAGE);
+		ImageRendererComponent renderer = new ImageRendererComponent();
+		MouseClickComponent mouseHandler = new MouseClickComponent();
+		
+		mouseHandler.onClick((x, y) -> onClickCallback.run());
+		
+		object.addComponent(area);
+		object.addComponent(image);
+		object.addComponent(renderer);
+		object.addComponent(mouseHandler);
+		
+		return object;
+	}
+}</pre>
+		<i>Hier ist zu erwähnen, dass ich gerade an einer abstrakten <code>PrototypedPrefab</code>-Klasse arbeite. Diese soll die Arbeit mit <code>Prefabs</code> vereinfachen und den <code>GameObjectService</code> liefern, den jeder <Code>Prefab</code> brucht </i>. 
+	</p>
+	
+	<p>
+		<a name="BackgroundImagePrefab"></a>
+		<h4>BackgroundImagePrefab</h4>
+		Dies ist auch ein <code>Prefab</code>, das man in vielen <code>Scenes</code> gebrauchen kann. Es stellt einfach einen Hintergrund dar, der über den gesamten Bildschirm geht.
+		<pre>
+public class BackgroundImagePrefab implements Prefab {
+	
+	private GameObjectService gameObjectService = Services.get(GameObjectService.class);
+	private String imageFile;
+	
+	public BackgroundImagePrefab(String imageFile) {
+		this.imageFile = imageFile;
+	}
+	
+	@Override
+	public void getGameObject() {
+		GameObject object = gameObjectService.createGameObject();
+		
+		AreaComponent area = new AreaComponent(0.0f, 0.0f, 1.0f, 1.0f);
+		ImageComponent image = new ImageComponent(imageFile);
+		ImageRendererComponent renderer = new ImageRendererComponent();
+		
+		renderer.setRenderLayer(ImageRendererComponent.RenderLayer.BACKGROUND_LAYER);
+		
+		object.addComponent(area);
+		object.addComponent(image);
+		object.addComponent(renderer);
+		
+		return object;
+	}
+}</pre>
+		Auch hier kann man wieder die hohe Wiederverwendbarkeit der <code>Components</code> sehen.
+	</p>
+	
+	<p>
+		<a name="Scene1"></a>
+		<h4>Scene1</h4>
+		Als nächstes erstellen wir die erste <code>Scene</code> des Spiels. <br/>
+		Eine <code>Scene</code> ist ein <code>GameState</code>, der <code>Components</code> unterstützt. Für jeden Zustand, in dem sich das Spiel befinden kann, muss eine <code>Scene</code> erstellt werden. Damit <code>Scenes</code> vom Programm unterschieden werden können, benötigen sie eine ID. Alles, was man bei einer <code>Scene</code> machen muss, ist <code>GameObjects</code> hinzufügen, diese übernehmen dann den Rest.
+		<pre>
+public class Scene1 extends Scene {
+
+	private CountdownPrefab countdown = new CountdownPrefab(() -> {
+		//Wenn der Countdown endet, gelangen wir in Scene2
+		getScene().switchScene(SceneIds.SCENE_2); 
+	});
+
+	public Scene1() {
+		super(SceneIds.SCENE_1);
+	}
+	
+	@Override
+	protected void initializeGameObjects() {
+		this.addGameOvject(countdown);
+	}
+}</pre>
+	</p>
+	
+	<p>
+		<a name="CountdownPrefab"></a>
+		<h4>CountdownPrefab</h4>
+		In <code>Scene1</code> wird ein <code>CountdownPrefab</code>-Object verwendet, dieses besteht im Grunde nur aus der <code>CountdownComponent</code> und einer Render-<code>Component</code> dafür.
+<pre>
+public class CountdownPrefab implements Prefab {
+
+	private GameObjectService gameObjectService = Services.get(GameObjectService.class);
+	private Runnable callback;
+	
+	public CountdownPrefab(Runnable callback) {
+		this.callback = callback;
+	}
+	
+	@Override
+	public void getGameObject() {
+		GameObject object = gameObjectService.createGameObject();
+		
+		CountdownComponent countdown = new CountdownComponent();
+		
+		countdown.onEnd(callback);
+		
+		object.addComponent(countdown);
+		object.addComponent(new CountdownRendererComponent());
+		object.addComponent(new AreaComponent(0.0f, 0.0f, 0.05f, 1.0f));
+		
+		return object;
+	}
+}</pre>		
+	</p>
+	
+	<p>
+		<a name="CountdownRendererComponent"></a>
+		<h4>CountdownRendererComponent</h4>
+		Um den Countdown darzustellen, zeichnen wir einfach eine ProgressBar.
+<pre>
+public class CountdownRendererComponent extends Component {
+
+	@Require
+	private CountdownComponent countdown;
+	
+	@Require
+	private AreaComponent area;
+	
+	@Override
+	public void onRenderGui(RenderArguments args) {
+		Graphics g = args.getGraphics();
+		
+		// Hier wäre es schlau die Daten zu speichern, da sie sich nicht verändern.
+		// Aber wie gesagt, für das ExampleGame reicht das hier.
+		float x = area.getAbsoluteArea.getX();
+		float y = area.getAbsoluteArea.getY();
+		float width = area.getAbsoluteArea.getWidth();
+		float height = area.getAbsoluteArea.getHeight();
+		
+		g.setColor(Color.red);
+		g.fillRect(x, y, width, height);
+		g.setColor(Color.green);
+		g.fillRect(x, y, width * countdown.getPercentDone(), height);
+	}
+}</pre>
+		An dieser <code>Component</code> sieht man nichts neues, aber man kann wieder sehen, dass man auf andere <code>Components</code> zugreifen kann und Behavior-Methoden überschreiben kann.
+	</p>
+	
+	<p>
+		<a name="Scene2"></a>
+		<h4>Scene2</h4>
+		<code>Scene2</code> hat einen Hintergrund und einen Button um wieder in <code>Scene1</code> zu gelangen.
+		<pre>
+public class Scene2 extends Scene {
+
+	public Scene2() {
+		super(SceneIds.SCENE_2);
+	}
+	
+	@Override
+	public void initializeGameObjects() {
+		addGameObject(new EnterScene1ButtonPrefab());
+		addGameObject(new BackgroundImagePrefab("res/img/scene2_background.png"));
+	}
+}</pre>
+	</p>
+	
+	<p>
+		<a name="EnterScene1ButtonPrefab"></a>
+		<h4>EnterScene1ButtonPrefab</h4>
+		Das letzte <code>Prefab</code> zeigt, wie man bereits bestehende <code>GameObjects</code> erweitern kann und <code>Prefabs</code> benzuten kann um Einstellungen zu setzten. Speziell für diesen Fall wäre ein <code>PrototypedPrefab</code> praktisch.
+		<pre>
+public class EnterScene1ButtonPrefab implements Prefab {
+
+	private GameObjectService gameObjectService = Services.get(GameObjectService.class);
+	
+	@Override
+	public void getGameObject() {
+		// Kleiner Hack um an das Scne-Object zu kommen... :D Funktioniert eventuell nicht wirklich... aber hier geht es nicht um exakten Code, sondern um die Konzepte
+		GameObject button = null; 
+		
+		Rectangle bounds = new Rectangle(0.45, 0.8, 0.1, 0.05);
+		Runnable enterScene1 = () -> {
+			button.getScene().switchScene(SceneIds.SCENE_1);
+		};
+		
+		button = gameObjectService.createGameObject(new ButtonPrefab(bounds, enterScene1));
+		return button;
+	}
+}</pre>
+	</p>
+
+	<script>
+		function addLineNumbers() {
+			var codeBlocks = document.getElementsByTagName("pre");
+			for (var i = 0; i < codeBlocks.length; i++) {
+				var code = codeBlocks[i].innerHTML;
+				var lines = code.split("\n");
+				
+				for (var lineNumber = 0; lineNumber < lines.length; lineNumber++) {
+					var lineNumberSpan = "<span class=\"LineNumber\">" + (lineNumber + 1) + "</span>"
+					lines[lineNumber] = "<span>" + lineNumberSpan + lines[lineNumber] + "</span>";
+				}
+				
+				codeBlocks[i].innerHTML = lines.join("\n");
+			}
+		}
+		
+		function highlightSyntax() {
+			var keywords = [
+				"class", "interface", "enum",
+				"public", "protected", "private", 
+				"static", "final", "abstract",
+				"extends", "implements",
+				"byte", "short", "int", "long", "float", "double", "boolean", "void",
+				"new", "this", "super",
+				"if", "else", "while",
+				"return"
+			];
+			
+			
+			var codeBlocks = document.getElementsByTagName("pre");
+			for (var i = 0; i < codeBlocks.length; i++) {
+				var code = codeBlocks[i].innerHTML;
+				
+				for (var j = 0; j < keywords.length; j++) {
+					code = code.replace(new RegExp(keywords[j], "g"),
+						"<span class=\"Keyword\">" + keywords[j] + "</span>");
+				}
+				
+				var lines = code.split("\n");
+				for (var j = 0; j < lines.length; j++) {
+					if (lines[j].indexOf("@") != -1) {
+						lines[j] = "<span class=\"Annotation\">" + lines[j] + "</span>";
+					} else if (lines[j].indexOf("//") != -1){
+						lines[j] = "<span class=\"Comment\">" + lines[j] + "</span>";
+					}
+				}		
+				
+				codeBlocks[i].innerHTML = lines.join("\n");
+			}
+		}
+	
+		window.onload = function() {
+			highlightSyntax();
+			addLineNumbers();
+		};
+	</script>
+	
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
