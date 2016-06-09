@@ -190,6 +190,13 @@ public abstract class Scene extends BasicGameState {
 
 		forEachComponent(component -> component.onMouseMove(arguments));
 	}
+	
+	/**
+	 * Closes the game.
+	 */
+	public void exitGame() {
+		game.getContainer().exit();
+	}
 
 	/**
 	 * Method to be called on initializing this Scene. In here you should add
