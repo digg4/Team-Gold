@@ -34,7 +34,7 @@ public class GameObjectServiceProvider implements Provider<GameObjectService> {
 	private static class GameObjectServiceImpl implements GameObjectService {
 
 		@Inject
-		BehaviorArgumentService behaviorArgumentService;
+		private BehaviorArgumentService behaviorArgumentService;
 
 		/**
 		 * A Prefab to create a plain GameObject. It is saved here since there is no
