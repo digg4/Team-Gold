@@ -2,6 +2,12 @@ package dhbw.teamgold.game.common.services;
 
 import dhbw.teamgold.engine.service.Service;
 
+/**
+ * Service to keep track of how much of the players play-time and wait-time has
+ * passed.
+ * 
+ * @author Daniel Spaniol
+ */
 public interface GameTimeService extends Service {
 
 	/**
@@ -36,9 +42,10 @@ public interface GameTimeService extends Service {
 	 * method.
 	 */
 	void startTimeTicking();
-	
+
 	/**
-	 * @return
+	 * @return The percentage of the play-time that already passed. 0.0 means
+	 *         0%, 1.0 means 100%.
 	 */
 	double getPercentOfTimeOver();
 
