@@ -5,7 +5,6 @@ import org.newdawn.slick.SlickException;
 
 import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.common.services.GameStatsPersistenceService;
-import dhbw.teamgold.game.common.services.GameStatsService;
 import dhbw.teamgold.game.common.services.providers.GameStatsPersistenceServiceProvider;
 import dhbw.teamgold.game.common.services.providers.GameStatsServiceProvider;
 import dhbw.teamgold.game.common.services.providers.GameTimeServiceProvider;

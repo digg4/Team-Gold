@@ -5,18 +5,17 @@ import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 
-
-
-public class ExitButtonClickHandlerComponent extends Component {
+public class ExitButtonClickHandler extends Component {
+	
 	@Require
-	AreaComponent area;
+	private AreaComponent area;
+
 	@Override
 	public void onMouseButtonPressed(MouseButtonArguments arguments) {
 		float x = arguments.getX();
 		float y = arguments.getY();
-		if(area.contains(x, y)){
-			getGameObject().getScene().exitGame();		
+		if (area.contains(x, y)) {
+			getGameObject().getScene().exitGame();
 		}
-	
 	}
 }

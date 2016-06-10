@@ -11,6 +11,7 @@ import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
+import dhbw.teamgold.game.mainmenu.components.OptionsButtonClickHandler;
 
 public class OptionsButtonPrefab extends PrototypedPrefab {
 	private static final Rectangle BOUNDS = new Rectangle(0.01f, 0.85f, 0.15f, 0.05f);
@@ -22,6 +23,7 @@ public class OptionsButtonPrefab extends PrototypedPrefab {
 		TextRendererComponent textRenderer = new TextRendererComponent();
 		ImageComponent image = new ImageComponent("ExitHell.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
+		OptionsButtonClickHandler clickHandler = new OptionsButtonClickHandler();
 		
 		textRenderer.setTextColor(Color.red);
 		
@@ -30,5 +32,6 @@ public class OptionsButtonPrefab extends PrototypedPrefab {
 		object.addComponent(renderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
+		object.addComponent(clickHandler);
 	}
 }

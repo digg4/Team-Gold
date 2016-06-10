@@ -11,7 +11,7 @@ import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.mainmenu.components.ExitButtonClickHandlerComponent;
+import dhbw.teamgold.game.mainmenu.components.ExitButtonClickHandler;
 
 public class ExitGameButtonPrefab extends PrototypedPrefab {
 	
@@ -24,7 +24,7 @@ public class ExitGameButtonPrefab extends PrototypedPrefab {
 		TextRendererComponent textRenderer = new TextRendererComponent();
 		ImageComponent image = new ImageComponent("ExitHell.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
-		ExitButtonClickHandlerComponent clickHandlerComponent = new ExitButtonClickHandlerComponent();
+		ExitButtonClickHandler clickHandlerComponent = new ExitButtonClickHandler();
 
 		textRenderer.setTextColor(Color.red);
 		
