@@ -6,21 +6,19 @@ import org.newdawn.slick.geom.Rectangle;
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.components.ImageComponent;
 import dhbw.teamgold.engine.components.ImageRendererComponent;
+import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
-import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.mainmenu.components.ExitButtonClickHandlerComponent;
+import dhbw.teamgold.game.mainmenu.components.StartGameButtonClickHandler;
 
-public class ExitGamePrefab extends PrototypedPrefab {
-	static Rectangle bounds = new Rectangle(0.01f, 0.91f, 0.15f, 0.05f);
-	public ExitGamePrefab() {
-	}
+public class OptionsButtonPrefab extends PrototypedPrefab {
+	static Rectangle bounds = new Rectangle( 0.01f, 0.85f, 0.15f, 0.05f);
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(bounds);
-		TextComponent text = new TextComponent("Exit");
+		TextComponent text = new TextComponent("Options");
 		TextRendererComponent textRenderer = new TextRendererComponent();
 		textRenderer.setTextColor(Color.red);
 		ImageComponent image = new ImageComponent("ExitHell.png");
@@ -30,6 +28,8 @@ public class ExitGamePrefab extends PrototypedPrefab {
 		object.addComponent(renderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
-		object.addComponent(new ExitButtonClickHandlerComponent());
+	
+		object.addComponent(new StartGameButtonClickHandler());
+		
 	}
 }

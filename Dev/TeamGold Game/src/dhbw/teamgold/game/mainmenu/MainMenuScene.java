@@ -2,12 +2,12 @@ package dhbw.teamgold.game.mainmenu;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.mainmenu.prefabs.EnterSceneGamePrefab;
-import dhbw.teamgold.game.mainmenu.prefabs.ExitGamePrefab;
+import dhbw.teamgold.game.mainmenu.prefabs.StartGameButtonPrefab;
+import dhbw.teamgold.game.mainmenu.prefabs.ExitGameButtonPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.HighscorePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.MainMenuBackgroundPrefab;
+import dhbw.teamgold.game.mainmenu.prefabs.OptionsButtonPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.ShowTimerPrefab;
-import dhbw.teamgold.game.prefab.EnterScene12ButtonPrefab;
 
 public class MainMenuScene extends Scene {
 
@@ -17,13 +17,11 @@ public class MainMenuScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
-		
-		
 		this.addGameObject(new MainMenuBackgroundPrefab());
 		this.addGameObject(new ShowTimerPrefab());
 		this.addGameObject(new HighscorePrefab());
-		this.addGameObject(new EnterScene12ButtonPrefab());
-		this.addGameObject(new EnterSceneGamePrefab());
-		this.addGameObject(new ExitGamePrefab());		
+		this.addGameObject(new OptionsButtonPrefab());
+		this.addGameObject(new StartGameButtonPrefab());
+		this.addGameObject(new ExitGameButtonPrefab());		
 	}
 }
