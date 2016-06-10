@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.mainmenu.button;
+package dhbw.teamgold.game.mainmenu.components;
 
 import dhbw.teamgold.engine.behavior.MouseButtonArguments;
 import dhbw.teamgold.engine.components.AreaComponent;

@@ -11,7 +11,7 @@ import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.mainmenu.button.StartGameButtonClickHandler;
+import dhbw.teamgold.game.mainmenu.components.StartGameButtonClickHandler;
 
 public class EnterScene12ButtonPrefab extends PrototypedPrefab {
 	static Rectangle bounds = new Rectangle( 0.01f, 0.85f, 0.15f, 0.05f);

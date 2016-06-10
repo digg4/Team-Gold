@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.mainmenu.prefab;
+package dhbw.teamgold.game.mainmenu.prefabs;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
@@ -21,7 +21,7 @@ import dhbw.teamgold.game.common.services.providers.GameTimeServiceProvider;
 import dhbw.teamgold.game.mainmenu.components.CountdownComponent;
 import dhbw.teamgold.game.mainmenu.components.CountdownRendererComponent;
 
-public class showTimerPrefab extends PrototypedPrefab {
+public class ShowTimerPrefab extends PrototypedPrefab {
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(new Rectangle(0f, 0f, 1f, 0.02f));
