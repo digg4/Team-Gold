@@ -36,5 +36,10 @@ public interface GameTimeService extends Service {
 	 * method.
 	 */
 	void startTimeTicking();
+	
+	/**
+	 * @return
+	 */
+	double getPercentOfTimeOver();
 
 }
