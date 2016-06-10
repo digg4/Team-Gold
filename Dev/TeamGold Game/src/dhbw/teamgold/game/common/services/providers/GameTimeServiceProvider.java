@@ -65,7 +65,7 @@ public class GameTimeServiceProvider implements Provider<GameTimeService> {
 				long waitTimeStarted = gameStatsPersistenceService.getStats().getGameStart() + MILISECONDS_TO_PLAY;
 				long waitTimePassed = System.currentTimeMillis() - waitTimeStarted;
 				
-				return Math.max(1, waitTimePassed / MILISECONDS_TO_WAIT);
+				return 1- Math.min(1, waitTimePassed / (double)MILISECONDS_TO_WAIT);
 			}
 			
 			if (!isTimeTicking()) {
@@ -75,7 +75,7 @@ public class GameTimeServiceProvider implements Provider<GameTimeService> {
 			long playTimeStarted = gameStatsPersistenceService.getStats().getGameStart();
 			long playTimePassed = System.currentTimeMillis() - playTimeStarted;
 			
-			return Math.max(1, playTimePassed / MILISECONDS_TO_PLAY);
+			return Math.min(1, playTimePassed / (double)MILISECONDS_TO_PLAY);
 		}
 	}
 }
