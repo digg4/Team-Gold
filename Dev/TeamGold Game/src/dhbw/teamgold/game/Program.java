@@ -24,12 +24,18 @@ public final class Program {
 	private static final boolean SHOW_FPS = false;
 	private static final int TARGET_FPS = 60;
 
+	/**
+	 * main method
+	 * 
+	 * @param args
+	 *            console arguments
+	 */
 	public static void main(String[] args) {
 		Services.registerDefaultProviders();
 		registerCustomProviders();
 
-		Runtime.getRuntime().addShutdownHook(new Thread(Services.get(GameStatsPersistenceService.class)::saveStats));
-		
+		saveStatsOnExit();
+
 		try {
 			AppGameContainer game = new AppGameContainer(new _TeamGold_Game(NAME));
 			game.setDisplayMode(WIDTH, HEIGHT, FULLSCREEN);
@@ -41,11 +47,23 @@ public final class Program {
 		}
 	}
 
+	/**
+	 * Registers all the game-specific service-providers.
+	 */
 	private static void registerCustomProviders() {
 		Services.provide(new GameStatsPersistenceServiceProvider());
 		Services.provide(new HighscoreServiceProvider());
 		Services.provide(new GameTimeServiceProvider());
 		Services.provide(new GameStatsServiceProvider());
+	}
+
+	/**
+	 * When the program is closed the GameStatsPersistenceService will save the
+	 * stats.
+	 */
+	private static void saveStatsOnExit() {
+		Thread saveOnShutdown = new Thread(Services.get(GameStatsPersistenceService.class)::saveStats);
+		Runtime.getRuntime().addShutdownHook(saveOnShutdown);
 	}
 
 	/**
