@@ -18,19 +18,18 @@ public class GameStatsPersistenceServiceProvider implements Provider<GameStatsPe
 	public GameStatsPersistenceService createService() {
 		return new GameStatsPersistenceServiceImpl();
 	}
-	
+
 	@Override
 	public Class<GameStatsPersistenceService> getType() {
 		return GameStatsPersistenceService.class;
 	}
-	
-	
+
 	private static class GameStatsPersistenceServiceImpl implements GameStatsPersistenceService {
 
 		private static final String FILE_NAME = "test.savegame";
-		
+
 		private PersistentGameStats stats = null;
-		
+
 		@Override
 		public PersistentGameStats getStats() {
 			if (stats == null) {
@@ -40,20 +39,22 @@ public class GameStatsPersistenceServiceProvider implements Provider<GameStatsPe
 					createNewStats();
 				}
 			}
+
 			return stats;
 		}
-		
+
 		private void loadStatsFromFile() {
 			try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
 				stats = (PersistentGameStats) stream.readObject();
 			} catch (ClassNotFoundException | IOException e) {
 				e.printStackTrace();
+				createNewStats();
 			}
 		}
-		
+
 		private void createNewStats() {
 			stats = new PersistentGameStats();
-			
+
 			stats.setHighscore(0);
 			stats.setGameStart(0);
 		}
