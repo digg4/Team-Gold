@@ -7,7 +7,7 @@ import dhbw.teamgold.game.mainmenu.prefabs.ExitGameButtonPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.HighscorePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.MainMenuBackgroundPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.OptionsButtonPrefab;
-import dhbw.teamgold.game.mainmenu.prefabs.ShowTimerPrefab;
+import dhbw.teamgold.game.mainmenu.prefabs.ShowGameTimePrefab;
 
 public class MainMenuScene extends Scene {
 
@@ -18,7 +18,7 @@ public class MainMenuScene extends Scene {
 	@Override
 	protected void initializeGameObjects() {
 		this.addGameObject(new MainMenuBackgroundPrefab());
-		this.addGameObject(new ShowTimerPrefab());
+		this.addGameObject(new ShowGameTimePrefab());
 		this.addGameObject(new HighscorePrefab());
 		this.addGameObject(new OptionsButtonPrefab());
 		this.addGameObject(new StartGameButtonPrefab());
