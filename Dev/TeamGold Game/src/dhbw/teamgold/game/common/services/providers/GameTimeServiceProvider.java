@@ -61,12 +61,21 @@ public class GameTimeServiceProvider implements Provider<GameTimeService> {
 
 		@Override
 		public double getPercentOfTimeOver() {
+			if (isTimeOver()) {
+				long waitTimeStarted = gameStatsPersistenceService.getStats().getGameStart() + MILISECONDS_TO_PLAY;
+				long waitTimePassed = System.currentTimeMillis() - waitTimeStarted;
+				
+				return Math.max(1, waitTimePassed / MILISECONDS_TO_WAIT);
+			}
+			
 			if (!isTimeTicking()) {
 				return 0;
 			}
-
-			long milisecondsPassed = System.currentTimeMillis() - gameStatsPersistenceService.getStats().getGameStart();
-			return Math.min(1, (milisecondsPassed / (double) MILISECONDS_TO_PLAY));
+			
+			long playTimeStarted = gameStatsPersistenceService.getStats().getGameStart();
+			long playTimePassed = System.currentTimeMillis() - playTimeStarted;
+			
+			return Math.max(1, playTimePassed / MILISECONDS_TO_PLAY);
 		}
 	}
 }
