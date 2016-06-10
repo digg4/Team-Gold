@@ -13,31 +13,25 @@ import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.mainmenu.components.StartGameButtonClickHandler;
 
-
-
 public class StartGameButtonPrefab extends PrototypedPrefab {
-	static Rectangle bounds =	new Rectangle( 0.01f, 0.79f, 0.15f, 0.05f);
-	public StartGameButtonPrefab() {
-	
-		
-	}
+	private static final Rectangle BOUNDS = new Rectangle(0.01f, 0.79f, 0.15f, 0.05f);
+
 	@Override
 	protected void initializeGameObject(GameObject object) {
-		AreaComponent area = new AreaComponent(bounds);
-	
-		
+		AreaComponent area = new AreaComponent(BOUNDS);
 		ImageComponent image = new ImageComponent("ExitHell.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
 		TextComponent text = new TextComponent("Play");
 		TextRendererComponent textRenderer = new TextRendererComponent();
+		StartGameButtonClickHandler clickHandler = new StartGameButtonClickHandler();
+
 		textRenderer.setTextColor(Color.red);
+		
 		object.addComponent(area);
 		object.addComponent(image);
 		object.addComponent(renderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
-		object.addComponent(new StartGameButtonClickHandler());
+		object.addComponent(clickHandler);
 	}
-
-
 }
