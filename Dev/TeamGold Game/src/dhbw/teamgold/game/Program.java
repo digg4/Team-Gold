@@ -4,6 +4,8 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
 
 import dhbw.teamgold.engine.service.Services;
+import dhbw.teamgold.game.common.services.GameStatsPersistenceService;
+import dhbw.teamgold.game.common.services.GameStatsService;
 import dhbw.teamgold.game.common.services.providers.GameStatsPersistenceServiceProvider;
 import dhbw.teamgold.game.common.services.providers.GameStatsServiceProvider;
 import dhbw.teamgold.game.common.services.providers.GameTimeServiceProvider;
@@ -27,6 +29,8 @@ public final class Program {
 		Services.registerDefaultProviders();
 		registerCustomProviders();
 
+		Runtime.getRuntime().addShutdownHook(new Thread(Services.get(GameStatsPersistenceService.class)::saveStats));
+		
 		try {
 			AppGameContainer game = new AppGameContainer(new _TeamGold_Game(NAME));
 			game.setDisplayMode(WIDTH, HEIGHT, FULLSCREEN);
