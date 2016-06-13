@@ -11,14 +11,15 @@ import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.common.components.ButtonHandler;
+import dhbw.teamgold.game.common.components.SwitchSceneButtonHandler;
 
-public class GeneralButtonPrefab extends PrototypedPrefab {
-	int scene;
-	String content;
-	Rectangle bounds;
+public class SwitchSceneButtonPrefab extends PrototypedPrefab {
+	
+	private final int scene;
+	private final String content;
+	private final Rectangle bounds;
 
-	public GeneralButtonPrefab(Rectangle bounds, String content, int nextScene) {
+	public SwitchSceneButtonPrefab(Rectangle bounds, String content, int nextScene) {
 		this.scene = nextScene;
 		this.content = content;
 		this.bounds = bounds;
@@ -28,16 +29,19 @@ public class GeneralButtonPrefab extends PrototypedPrefab {
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(bounds);
 		ImageComponent image = new ImageComponent("ExitHell.png");
-		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
+		ImageRendererComponent imageRenderer = new ImageRendererComponent(RenderLayer.GUI);
 		TextComponent text = new TextComponent(content);
 		TextRendererComponent textRenderer = new TextRendererComponent();
+		SwitchSceneButtonHandler clickHandler = new SwitchSceneButtonHandler(scene);
+		
 		textRenderer.setTextColor(Color.red);
+		
 		object.addComponent(area);
 		object.addComponent(image);
-		object.addComponent(renderer);
+		object.addComponent(imageRenderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
-		object.addComponent(new ButtonHandler(scene));
+		object.addComponent(clickHandler);
 	}
 
 }

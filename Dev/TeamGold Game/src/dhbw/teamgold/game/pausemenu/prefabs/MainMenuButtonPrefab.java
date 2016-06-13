@@ -11,7 +11,7 @@ import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.common.components.ButtonHandler;
+import dhbw.teamgold.game.common.components.SwitchSceneButtonHandler;
 
 public class MainMenuButtonPrefab extends PrototypedPrefab {
 
@@ -28,7 +28,7 @@ public class MainMenuButtonPrefab extends PrototypedPrefab {
 		object.addComponent(renderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
-		object.addComponent(new ButtonHandler(SceneIds.STATS_SCREEN));			
+		object.addComponent(new SwitchSceneButtonHandler(SceneIds.STATS_SCREEN));			
 	}
 
 

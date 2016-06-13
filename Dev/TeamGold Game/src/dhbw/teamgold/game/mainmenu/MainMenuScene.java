@@ -4,7 +4,7 @@ import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.common.prefabs.GeneralButtonPrefab;
+import dhbw.teamgold.game.common.prefabs.SwitchSceneButtonPrefab;
 import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.ButtonBackGroundPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.EnterSceneGamePrefab;
@@ -29,7 +29,7 @@ public class MainMenuScene extends Scene {
 		this.addGameObject(new HighscorePrefab());
 		
 		this.addGameObject(new EnterSceneGamePrefab());
-		this.addGameObject(new GeneralButtonPrefab(new Rectangle(0.01f, 0.85f, 0.15f, 0.05f), "Options", SceneIds.OPTIONS_MENU));
+		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.01f, 0.85f, 0.15f, 0.05f), "Options", SceneIds.OPTIONS_MENU));
 		this.addGameObject(new ExitGamePrefab());		
 	}
 }

@@ -11,7 +11,7 @@ import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.common.components.ButtonHandler;
+import dhbw.teamgold.game.common.components.SwitchSceneButtonHandler;
 
 public class ResumeButtonPrefab extends PrototypedPrefab {
 	/*
@@ -33,7 +33,7 @@ public class ResumeButtonPrefab extends PrototypedPrefab {
 		object.addComponent(text);
 		object.addComponent(textRenderer);
 		//object.addComponent(new ButtonHandler(miniGameSelectorService.getCurrentMiniGameId()));		
-		object.addComponent(new ButtonHandler(SceneIds.MAIN_MENU));
+		object.addComponent(new SwitchSceneButtonHandler(SceneIds.MAIN_MENU));
 	}
 
 

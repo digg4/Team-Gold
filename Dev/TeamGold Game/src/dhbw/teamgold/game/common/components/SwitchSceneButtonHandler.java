@@ -5,12 +5,14 @@ import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 
-public class ButtonHandler extends Component {
-	int scene;
+public class SwitchSceneButtonHandler extends Component {
+	
+	private final int scene;
+	
 	@Require
-	AreaComponent area;
+	private AreaComponent area;
 
-	public ButtonHandler(int scene) {
+	public SwitchSceneButtonHandler(int scene) {
 		this.scene = scene;
 	}
 
@@ -18,8 +20,8 @@ public class ButtonHandler extends Component {
 	public void onMouseButtonPressed(MouseButtonArguments arguments) {
 		float x = arguments.getX();
 		float y = arguments.getY();
+
 		if (area.contains(x, y)) {
-			// getGameObject().getScene().switchScene(miniGameSelectorService.getCurrentMiniGameId());
 			getGameObject().getScene().switchScene(scene);
 		}
 	}
