@@ -4,7 +4,7 @@ import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.common.components.GeneralButtonPrefab;
+import dhbw.teamgold.game.common.prefabs.GeneralButtonPrefab;
 import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.ButtonBackGroundPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.EnterSceneGamePrefab;
