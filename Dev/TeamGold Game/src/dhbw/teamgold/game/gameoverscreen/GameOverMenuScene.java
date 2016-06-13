@@ -16,9 +16,10 @@ public class GameOverMenuScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
+		this.addGameObject(new GameOverMenuBackgroundPrefab());
 		this.addGameObject(new TextDisplayPrefab(Messages.getString("GameOverMenu.LostGame")));
-		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.426f, 0.75f, 0.15f, 0.05f),
-				Messages.getString("GameOverMenu.Back"), SceneIds.MAIN_MENU));
+		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.426f, 0.75f, 0.15f, 0.05f),Messages.getString("GameOverMenu.Back"), SceneIds.MAIN_MENU));
+	
 	}
 
 }

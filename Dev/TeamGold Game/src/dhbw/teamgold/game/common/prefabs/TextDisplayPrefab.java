@@ -21,13 +21,14 @@ public class TextDisplayPrefab extends PrototypedPrefab {
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0.35f,0.4f,0.3f,0.3f);
 		TextComponent text = new TextComponent(textToShow);
+		//RectangeRendererComponent rectangleRenderer = new RectangeRendererComponent();
 		TextRendererComponent textRenderer = new TextRendererComponent();
-		RectangeRendererComponent rectangleRenderer = new RectangeRendererComponent();
 		
-		textRenderer.setTextColor(Color.red);
+		
+		textRenderer.setTextColor(Color.black);
 
 		object.addComponent(area);
-		object.addComponent(rectangleRenderer);
+	//	object.addComponent(rectangleRenderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
 	}

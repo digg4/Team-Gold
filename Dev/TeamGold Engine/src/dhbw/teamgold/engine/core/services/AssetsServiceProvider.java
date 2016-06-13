@@ -2,6 +2,7 @@ package dhbw.teamgold.engine.core.services;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Sound;
@@ -72,6 +73,12 @@ public class AssetsServiceProvider implements Provider<AssetsService> {
 			} catch (Exception e) {
 				throw new AssetNotFoundException(name, e);
 			}
+		}
+
+		@Override
+		public void muteAll() {
+			Set<String> keys = soundCache.keySet();
+			keys.forEach(Key -> soundCache.get(Key).stop());
 		}
 	}
 }

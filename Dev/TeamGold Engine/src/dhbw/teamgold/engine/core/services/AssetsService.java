@@ -37,5 +37,9 @@ public interface AssetsService extends Service {
 	 *             Thrown when the Sound cannot be found by the
 	 */
 	Sound getSound(String name) throws AssetNotFoundException;
+	/**
+	 *	mutes All sounds saved in soundCache are going to be muted if they were muted before 
+	 */
+	void muteAll();
 
 }
