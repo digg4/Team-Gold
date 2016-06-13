@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.mainmenu.prefab;
+package dhbw.teamgold.game.mainmenu.prefabs;
 
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.components.ImageComponent;

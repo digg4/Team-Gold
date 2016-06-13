@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.mainmenu.components;
+package dhbw.teamgold.game.components;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -8,7 +8,6 @@ import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 import dhbw.teamgold.engine.service.Services;
-import dhbw.teamgold.game.common.services.GameStatsService;
 import dhbw.teamgold.game.common.services.GameTimeService;
 
 public class CountdownRendererComponent extends Component {

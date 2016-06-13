@@ -41,7 +41,6 @@ public class TextRendererComponent extends Component {
 	@Override
 	public void onRenderGui(RenderArguments arguments) {
 		Graphics g = arguments.getGraphics();
-		
 		if (font != null) {
 			g.setFont(font);
 		}

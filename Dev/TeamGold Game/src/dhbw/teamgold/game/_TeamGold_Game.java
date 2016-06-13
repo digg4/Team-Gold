@@ -37,7 +37,7 @@ public class _TeamGold_Game extends StateBasedGame {
 		this.addState(new PostGameScreenScene());
 		
 		//this.enterState(SceneIds.SPLASH_SCREEN);
-		this.enterState(SceneIds.MAIN_MENU);
+		this.enterState(SceneIds.GAME_OVER_MENU);
 	}
 
 }
