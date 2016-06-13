@@ -6,7 +6,10 @@ import org.newdawn.slick.state.StateBasedGame;
 
 import dhbw.teamgold.game.gameoverscreen.GameOverMenuScene;
 import dhbw.teamgold.game.mainmenu.MainMenuScene;
+
 import dhbw.teamgold.game.minigames.GameOneScene;
+import dhbw.teamgold.game.minigames.Minigame1Scene;
+import dhbw.teamgold.game.minigames.prefabs.Game1BackgroundPrefab;
 import dhbw.teamgold.game.optionsmenu.OptionsMenuScene;
 import dhbw.teamgold.game.pausemenu.PauseMenuScene;
 import dhbw.teamgold.game.postgamescreen.PostGameScreenScene;
@@ -36,9 +39,12 @@ public class _TeamGold_Game extends StateBasedGame {
 		this.addState(new StatsScreenScene());
 		this.addState(new TimeOverMenuScene());
 		this.addState(new PostGameScreenScene());
+
 		this.addState(new GameOneScene());
+		this.addState(new Minigame1Scene());
+		
 		//this.enterState(SceneIds.SPLASH_SCREEN);
-		this.enterState(SceneIds.GAME_OVER_MENU);
+		this.enterState(SceneIds.GAME_1);
 	}
 
 }
