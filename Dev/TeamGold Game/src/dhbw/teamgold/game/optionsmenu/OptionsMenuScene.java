@@ -7,7 +7,7 @@ import dhbw.teamgold.game.optionsmenu.prefabs.ResumeeButtonPrefab;
 import dhbw.teamgold.game.optionsmenu.prefabs.SoundButtonPrefab;
 import dhbw.teamgold.game.optionsmenu.prefabs.TextButtonPrefab;
 import dhbw.teamgold.game.optionsmenu.prefabs.TutorialPrefab;
-import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
+import dhbw.teamgold.game.common.prefabs.GameTimeDisplayPrefab;
 
 public class OptionsMenuScene extends Scene {
 
@@ -21,7 +21,7 @@ public class OptionsMenuScene extends Scene {
 		this.addGameObject(new SoundButtonPrefab());
 		this.addGameObject(new TextButtonPrefab());
 		this.addGameObject(new TutorialPrefab());
-		this.addGameObject(new showTimerPrefab());
+		this.addGameObject(new GameTimeDisplayPrefab());
 		this.addGameObject(new ResumeeButtonPrefab());
 	}
 

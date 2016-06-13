@@ -6,7 +6,7 @@ import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
 import dhbw.teamgold.game.common.prefabs.SwitchSceneButtonPrefab;
 import dhbw.teamgold.game.common.prefabs.ScorePrefab;
-import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
+import dhbw.teamgold.game.common.prefabs.GameTimeDisplayPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.PauseMenuBackgroundPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.ResumeButtonPrefab;
@@ -20,7 +20,7 @@ public class PauseMenuScene extends Scene {
 	@Override
 	protected void initializeGameObjects() {
 		this.addGameObject(new PauseMenuBackgroundPrefab());
-		this.addGameObject(new showTimerPrefab());
+		this.addGameObject(new GameTimeDisplayPrefab());
 		this.addGameObject(new LivesPrefab());
 		this.addGameObject(new ScorePrefab());
 		
