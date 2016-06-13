@@ -3,7 +3,9 @@ package dhbw.teamgold.game.common;
 import java.io.Serializable;
 
 /**
- * @author Daniel
+ * The stats that will be saved when the game closes. This is a POJO.
+ * 
+ * @author Daniel Spaniol
  */
 public class PersistentGameStats implements Serializable {
 
@@ -27,19 +29,33 @@ public class PersistentGameStats implements Serializable {
 	 * whether or not the player still may play.
 	 */
 	private long gameStart;
-	
+
+	/**
+	 * @return The highest score reached so far
+	 */
 	public int getHighscore() {
 		return highscore;
 	}
 
+	/**
+	 * @param highscore
+	 *            The new highscore
+	 */
 	public void setHighscore(int highscore) {
 		this.highscore = highscore;
 	}
 
+	/**
+	 * @return The timestamp of when the last time a game started.
+	 */
 	public long getGameStart() {
 		return gameStart;
 	}
 
+	/**
+	 * @param gameStart
+	 *            The timestamp of when the last tiem a game was started.
+	 */
 	public void setGameStart(long gameStart) {
 		this.gameStart = gameStart;
 	}
