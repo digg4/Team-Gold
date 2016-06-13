@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.components;
+package dhbw.teamgold.game.common.components;
 
 import dhbw.teamgold.engine.behavior.MouseButtonArguments;
 import dhbw.teamgold.engine.components.AreaComponent;

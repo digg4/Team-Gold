@@ -2,7 +2,7 @@ package dhbw.teamgold.game.statsscreen;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.prefabs.showTimerPrefab;
+import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
 import dhbw.teamgold.game.statsscreen.prefabs.CountdownPrefab;
 import dhbw.teamgold.game.statsscreen.prefabs.LivesStatsPrefab;
 import dhbw.teamgold.game.statsscreen.prefabs.PointsStatsPrefab;

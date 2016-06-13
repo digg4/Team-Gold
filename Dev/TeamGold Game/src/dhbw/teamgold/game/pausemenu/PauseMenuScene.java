@@ -4,12 +4,12 @@ import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.components.GeneralButtonPrefab;
+import dhbw.teamgold.game.common.components.GeneralButtonPrefab;
+import dhbw.teamgold.game.common.prefabs.ScorePrefab;
+import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.PauseMenuBackgroundPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.ResumeButtonPrefab;
-import dhbw.teamgold.game.prefabs.ScorePrefab;
-import dhbw.teamgold.game.prefabs.showTimerPrefab;
 
 public class PauseMenuScene extends Scene {
 

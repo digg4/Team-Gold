@@ -4,8 +4,8 @@ import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.components.GeneralButtonPrefab;
-import dhbw.teamgold.game.prefabs.TextPlacePrefab;
+import dhbw.teamgold.game.common.components.GeneralButtonPrefab;
+import dhbw.teamgold.game.common.prefabs.TextPlacePrefab;
 
 public class TimeOverMenuScene extends Scene {
 

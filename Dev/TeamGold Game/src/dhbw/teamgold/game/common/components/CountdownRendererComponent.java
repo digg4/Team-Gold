@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.components;
+package dhbw.teamgold.game.common.components;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;

@@ -11,7 +11,7 @@ import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.components.ButtonHandler;
+import dhbw.teamgold.game.common.components.ButtonHandler;
 
 public class ResumeButtonPrefab extends PrototypedPrefab {
 	/*

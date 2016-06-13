@@ -7,7 +7,7 @@ import dhbw.teamgold.game.optionsmenu.prefabs.ResumeeButtonPrefab;
 import dhbw.teamgold.game.optionsmenu.prefabs.SoundButtonPrefab;
 import dhbw.teamgold.game.optionsmenu.prefabs.TextButtonPrefab;
 import dhbw.teamgold.game.optionsmenu.prefabs.TutorialPrefab;
-import dhbw.teamgold.game.prefabs.showTimerPrefab;
+import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
 
 public class OptionsMenuScene extends Scene {
 

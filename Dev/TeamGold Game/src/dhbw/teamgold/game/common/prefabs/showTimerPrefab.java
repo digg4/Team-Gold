@@ -1,10 +1,10 @@
-package dhbw.teamgold.game.prefabs;
+package dhbw.teamgold.game.common.prefabs;
 
 import org.newdawn.slick.geom.Rectangle;
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.components.CountdownRendererComponent;
+import dhbw.teamgold.game.common.components.CountdownRendererComponent;
 
 public class showTimerPrefab extends PrototypedPrefab {
 	@Override

@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.prefabs;
+package dhbw.teamgold.game.common.prefabs;
 
 import java.util.function.Consumer;
 
