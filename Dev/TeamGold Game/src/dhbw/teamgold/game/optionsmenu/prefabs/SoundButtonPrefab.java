@@ -1,23 +1,11 @@
 package dhbw.teamgold.game.optionsmenu.prefabs;
 
-import java.util.function.Consumer;
-
-import org.newdawn.slick.Color;
-
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.components.ImageComponent;
 import dhbw.teamgold.engine.components.ImageRendererComponent;
-import dhbw.teamgold.engine.components.TextComponent;
-import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
-import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.engine.core.Scene;
-import dhbw.teamgold.engine.core.exception.DuplicatedComponentException;
-import dhbw.teamgold.engine.core.exception.NoSuchComponentException;
-import dhbw.teamgold.game.components.ButtonHandler;
-import dhbw.teamgold.game.mainmenu.components.ButtonDisabledComponent;
 import dhbw.teamgold.game.optionsmenu.components.ButtonHandlerSound;
 import dhbw.teamgold.game.optionsmenu.components.ImageChooserSounds;
 

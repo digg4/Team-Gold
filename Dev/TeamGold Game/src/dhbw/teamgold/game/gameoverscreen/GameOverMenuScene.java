@@ -4,8 +4,8 @@ import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.components.GeneralButtonPrefab;
-import dhbw.teamgold.game.prefabs.TextPlacePrefab;
+import dhbw.teamgold.game.common.prefabs.SwitchSceneButtonPrefab;
+import dhbw.teamgold.game.common.prefabs.TextDisplayPrefab;
 
 public class GameOverMenuScene extends Scene {
 
@@ -15,8 +15,8 @@ public class GameOverMenuScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
-		this.addGameObject(new TextPlacePrefab("GameOver\nYou just lost your last live."));
-		this.addGameObject(new GeneralButtonPrefab(new Rectangle(0.426f, 0.75f, 0.15f, 0.05f),"Back to Main Menu", SceneIds.MAIN_MENU));
+		this.addGameObject(new TextDisplayPrefab("GameOver\nYou just lost your last live."));
+		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.426f, 0.75f, 0.15f, 0.05f),"Back to Main Menu", SceneIds.MAIN_MENU));
 	}
 
 }

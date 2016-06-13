@@ -1,7 +1,7 @@
-package dhbw.teamgold.game.components;
+package dhbw.teamgold.game.pausemenu.prefabs;
 
 import org.newdawn.slick.Color;
-import org.newdawn.slick.geom.Rectangle;
+
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.components.ImageComponent;
 import dhbw.teamgold.engine.components.ImageRendererComponent;
@@ -10,25 +10,17 @@ import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.mainmenu.components.ButtonDisabledComponent;
+import dhbw.teamgold.game.SceneIds;
+import dhbw.teamgold.game.common.components.SwitchSceneButtonHandler;
 
-public class GeneralButtonPrefab extends PrototypedPrefab {
-	int scene;
-	String content;
-	Rectangle bounds;
-
-	public GeneralButtonPrefab(Rectangle bounds, String content, int nextScene) {
-		this.scene = nextScene;
-		this.content = content;
-		this.bounds = bounds;
-	}
+public class MainMenuButtonPrefab extends PrototypedPrefab {
 
 	@Override
 	protected void initializeGameObject(GameObject object) {
-		AreaComponent area = new AreaComponent(bounds);
+		AreaComponent area = new AreaComponent(0.45f,0.52f,0.15f,0.05f);
 		ImageComponent image = new ImageComponent("ExitHell.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
-		TextComponent text = new TextComponent(content);
+		TextComponent text = new TextComponent("Main Menu");
 		TextRendererComponent textRenderer = new TextRendererComponent();
 		textRenderer.setTextColor(Color.red);
 		object.addComponent(area);
@@ -36,7 +28,9 @@ public class GeneralButtonPrefab extends PrototypedPrefab {
 		object.addComponent(renderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
-		object.addComponent(new ButtonHandler(scene));
+		object.addComponent(new SwitchSceneButtonHandler(SceneIds.STATS_SCREEN));			
 	}
+
+
 
 }
