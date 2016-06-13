@@ -88,10 +88,6 @@ public class TextRendererComponent extends Component {
 	@Override
 	public void onRenderGui(RenderArguments arguments) {
 		Graphics g = arguments.getGraphics();
-<<<<<<< HEAD
-=======
-
->>>>>>> fca4a29377c0c46b3fcafcb96a62a9e8cec78da1
 		if (font != null) {
 			g.setFont(font);
 		}

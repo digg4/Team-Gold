@@ -44,11 +44,8 @@ public class ImageComponent extends Component {
 	public Image getImage() {
 		return image;
 	}
-<<<<<<< HEAD
+
 	public void setImage(String image){
 		this.image = Services.get(AssetsService.class).getImage(image);
 	}
-	
-=======
->>>>>>> fca4a29377c0c46b3fcafcb96a62a9e8cec78da1
 }
