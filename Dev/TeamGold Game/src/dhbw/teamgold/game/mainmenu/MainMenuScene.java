@@ -4,21 +4,13 @@ import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
-
 import dhbw.teamgold.game.common.components.GeneralButtonPrefab;
+import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.ButtonBackGroundPrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.EnterSceneGamePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.ExitGamePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.HighscorePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.MainMenuBackgroundPrefab;
-import dhbw.teamgold.game.common.prefabs.showTimerPrefab;
-
-import dhbw.teamgold.game.mainmenu.prefabs.StartGameButtonPrefab;
-import dhbw.teamgold.game.mainmenu.prefabs.ExitGameButtonPrefab;
-import dhbw.teamgold.game.mainmenu.prefabs.HighscorePrefab;
-import dhbw.teamgold.game.mainmenu.prefabs.MainMenuBackgroundPrefab;
-import dhbw.teamgold.game.mainmenu.prefabs.OptionsButtonPrefab;
-import dhbw.teamgold.game.mainmenu.prefabs.ShowGameTimePrefab;
 
 
 public class MainMenuScene extends Scene {

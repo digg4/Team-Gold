@@ -3,9 +3,6 @@ package dhbw.teamgold.game.mainmenu.prefabs;
 import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.components.AreaComponent;
-import dhbw.teamgold.engine.components.ImageComponent;
-import dhbw.teamgold.engine.components.ImageRendererComponent;
-import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.optionsmenu.components.DrawRectangle;

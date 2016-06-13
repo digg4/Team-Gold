@@ -1,7 +1,6 @@
 package dhbw.teamgold.game.optionsmenu.prefabs;
 
 import org.newdawn.slick.Color;
-import org.newdawn.slick.geom.Rectangle;
 
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.components.TextComponent;
