@@ -7,8 +7,7 @@ import dhbw.teamgold.engine.core.Component;
 
 public class CountdownComponent extends Component{
 	private static final Runnable DO_NOTHING = () ->{};
-	private float secondsLeft = 900;
-	private boolean done = false;
+	private float secondsLeft = 10;
 	private Runnable callback = DO_NOTHING;
 	
 	public void onEnd(Runnable callback){
@@ -18,17 +17,15 @@ public class CountdownComponent extends Component{
 		this.callback = callback;
 	}
 	
-	public float getPercentDone(){
-		return Math.min(1, 1-secondsLeft/900);
-	}
 	@Override
 	public void onUpdate(UpdateArguments args){
 		if(secondsLeft > 0){
 				secondsLeft-=args.getSecondsSinceLastUpdate();
+				System.out.println(secondsLeft);
 		}
-		if(secondsLeft <= 0 && !done){
+		if(secondsLeft <= 0 ){
 			callback.run();
-			done = true;
+			secondsLeft = 10;
 		}
 	}
 }
