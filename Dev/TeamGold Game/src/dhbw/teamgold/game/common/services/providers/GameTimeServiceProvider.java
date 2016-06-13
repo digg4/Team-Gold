@@ -19,8 +19,8 @@ public class GameTimeServiceProvider implements Provider<GameTimeService> {
 
 	private static class GameTimeServiceImpl implements GameTimeService {
 
-		private static final int MINUTES_TO_PLAY = 15;
-		private static final int MINUTES_TO_WAIT = 45;
+		private static final int MINUTES_TO_PLAY = 10;
+		private static final int MINUTES_TO_WAIT = 0;
 
 		private static final long MILISECONDS_TO_PLAY = MINUTES_TO_PLAY * 60 * 1000;
 		private static final long MILISECONDS_TO_WAIT = MINUTES_TO_WAIT * 60 * 1000;

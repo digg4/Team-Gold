@@ -3,6 +3,7 @@ package dhbw.teamgold.game;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
 
+import dhbw.teamgold.engine.core.services.AssetsServiceProvider;
 import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.common.services.GameStatsPersistenceService;
 import dhbw.teamgold.game.common.services.providers.GameStatsPersistenceServiceProvider;
@@ -55,6 +56,7 @@ public final class Program {
 		Services.provide(new HighscoreServiceProvider());
 		Services.provide(new GameTimeServiceProvider());
 		Services.provide(new GameStatsServiceProvider());
+		Services.provide(new AssetsServiceProvider());
 	}
 
 	/**
