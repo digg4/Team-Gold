@@ -15,7 +15,7 @@ public class LivesPrefab extends PrototypedPrefab {
 		@Override
 	protected void initializeGameObject(GameObject object) {
 			AreaComponent area = new AreaComponent(0.1f, 0.025f, 0.15f, 0.05f);
-			ImageComponent image = new ImageComponent("Gesamt.png");
+			ImageComponent image = new ImageComponent("res/gui/Button-Background.png");
 			ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
 			ImageChooserLivesComponent chooser = new ImageChooserLivesComponent();
 			object.addComponent(area);

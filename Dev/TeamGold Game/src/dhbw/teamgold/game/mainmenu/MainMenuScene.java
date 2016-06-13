@@ -12,7 +12,6 @@ import dhbw.teamgold.game.mainmenu.prefabs.ExitGamePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.HighscorePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.MainMenuBackgroundPrefab;
 
-
 public class MainMenuScene extends Scene {
 
 	public MainMenuScene() {
@@ -22,14 +21,14 @@ public class MainMenuScene extends Scene {
 	@Override
 	protected void initializeGameObjects() {
 
-		
 		this.addGameObject(new MainMenuBackgroundPrefab());
 		this.addGameObject(new ButtonBackGroundPrefab());
 		this.addGameObject(new GameTimeDisplayPrefab());
 		this.addGameObject(new HighscorePrefab());
-		
+
 		this.addGameObject(new EnterSceneGamePrefab());
-		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.01f, 0.85f, 0.15f, 0.05f), "Options", SceneIds.OPTIONS_MENU));
-		this.addGameObject(new ExitGamePrefab());		
+		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.01f, 0.85f, 0.15f, 0.05f), "Options",
+				SceneIds.OPTIONS_MENU));
+		this.addGameObject(new ExitGamePrefab());
 	}
 }

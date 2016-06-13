@@ -15,7 +15,7 @@ public class ResumeeButtonPrefab extends PrototypedPrefab {
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0.426f, 0.85f, 0.15f, 0.05f);
-		ImageComponent image = new ImageComponent("ExitHell.png");
+		ImageComponent image = new ImageComponent("res/gui/Button-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
 		TextComponent text = new TextComponent("Resume");
 		TextRendererComponent rendererText = new TextRendererComponent();

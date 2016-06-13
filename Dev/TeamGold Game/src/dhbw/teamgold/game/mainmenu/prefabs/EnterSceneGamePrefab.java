@@ -22,7 +22,7 @@ public class EnterSceneGamePrefab extends PrototypedPrefab {
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(bounds);
 		ButtonDisabledComponent  buttonDisabler = new ButtonDisabledComponent();
-		ImageComponent image = new ImageComponent("ExitHell.png");
+		ImageComponent image = new ImageComponent("res/gui/Button-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
 		TextComponent text = new TextComponent("Play");
 		TextRendererComponent textRenderer = new TextRendererComponent();

@@ -16,7 +16,7 @@ public class LivesStatsPrefab extends PrototypedPrefab {
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0.39f, 0.5f,0.2f,0.1f);
 		//AreaComponent area = new AreaComponent(0.34f, 0.4f, 0.3f, 0.15f);
-		ImageComponent image = new ImageComponent("Gesamt.png");
+		ImageComponent image = new ImageComponent("res/gui/Menu-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
 		ImageChooserLivesComponent chooser = new ImageChooserLivesComponent();
 		TextComponent text = new TextComponent();

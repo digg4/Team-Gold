@@ -21,7 +21,7 @@ public class ExitGamePrefab extends PrototypedPrefab {
 		TextComponent text = new TextComponent("Exit");
 		TextRendererComponent textRenderer = new TextRendererComponent();
 		textRenderer.setTextColor(Color.red);
-		ImageComponent image = new ImageComponent("ExitHell.png");
+		ImageComponent image = new ImageComponent("res/gui/Button-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
 		object.addComponent(area);
 		object.addComponent(image);

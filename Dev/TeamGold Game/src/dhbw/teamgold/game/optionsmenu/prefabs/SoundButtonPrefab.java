@@ -14,7 +14,7 @@ public class SoundButtonPrefab extends PrototypedPrefab {
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0.6f,0.4f,0.05f,0.05f);
-		ImageComponent image = new ImageComponent("ExitHell.png");
+		ImageComponent image = new ImageComponent("res/gui/Button-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
 		ImageChooserSounds chooser = new ImageChooserSounds();
 		object.addComponent(area);

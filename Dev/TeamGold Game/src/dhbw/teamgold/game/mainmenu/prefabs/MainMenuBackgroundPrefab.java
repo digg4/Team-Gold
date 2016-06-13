@@ -12,7 +12,7 @@ public class MainMenuBackgroundPrefab extends PrototypedPrefab {
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0f, 0f, 1f, 1f);
-		ImageComponent image = new ImageComponent("AlternarivGesamt.png");
+		ImageComponent image = new ImageComponent("res/gui/Menu-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.BACKGROUND);
 
 		object.addComponent(area);

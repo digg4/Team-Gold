@@ -13,7 +13,7 @@ public class ImageChooserSounds extends Component{
 	@Override
 	public void onRenderGui(RenderArguments arguments) {
 		if(sounds == false){
-			image.setImage("ExitHell.png");
+			image.setImage("res/gui/Button-Background.png");
 		}
 		else{
 			image.setImage("");

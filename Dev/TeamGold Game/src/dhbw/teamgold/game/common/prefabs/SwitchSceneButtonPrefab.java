@@ -28,7 +28,7 @@ public class SwitchSceneButtonPrefab extends PrototypedPrefab {
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(bounds);
-		ImageComponent image = new ImageComponent("ExitHell.png");
+		ImageComponent image = new ImageComponent("res/gui/Button-Background.png");
 		ImageRendererComponent imageRenderer = new ImageRendererComponent(RenderLayer.GUI);
 		TextComponent text = new TextComponent(content);
 		TextRendererComponent textRenderer = new TextRendererComponent();

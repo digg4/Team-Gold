@@ -8,11 +8,11 @@ import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 
 public class OptionsBackgroundPrefab extends PrototypedPrefab {
-	//Optionsbackground has to be choosen till then its going to be  Alternariv Gesamt
+
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0f,0f,1f,1f);
-		ImageComponent image = new ImageComponent("AlternarivGesamt.png");
+		ImageComponent image = new ImageComponent("res/gui/Menu-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.BACKGROUND);
 		object.addComponent(area);
 		object.addComponent(image);

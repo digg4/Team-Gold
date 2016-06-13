@@ -11,17 +11,8 @@ public class ImageChooserLivesComponent extends Component {
 	@Require
 	ImageComponent image;
 	GameStatsService gameStatsService = Services.get(GameStatsService.class);
+
 	@Override
 	public void onRenderGui(RenderArguments arguments) {
-		if(gameStatsService.getStats().getLives() == 3){
-			image.setImage("ExitHell.png");
-			System.out.print("Spieler hat nurnoch 3 Leben");
-		}else if(gameStatsService.getStats().getLives() == 2){
-			image.setImage("TransparentButtons.png");
-			System.out.print("Spieler hat nurnoch 2 Leben");
-		}else{
-			image.setImage("DHBW.png");
-			System.out.print("Spieler hat nurnoch 1 Leben");
-		}
 	}
 }
