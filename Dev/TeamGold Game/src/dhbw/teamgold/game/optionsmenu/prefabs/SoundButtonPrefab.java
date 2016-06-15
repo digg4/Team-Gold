@@ -7,7 +7,6 @@ import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.optionsmenu.components.ButtonHandlerSound;
-import dhbw.teamgold.game.optionsmenu.components.ImageChooserSounds;
 
 public class SoundButtonPrefab extends PrototypedPrefab {
 
@@ -16,10 +15,8 @@ public class SoundButtonPrefab extends PrototypedPrefab {
 		AreaComponent area = new AreaComponent(0.075f,0.34f,0.1f,0.15f);
 		ImageComponent image = new ImageComponent("res/gui/SchalterOn.png");
 		ImageRendererComponent renderer = new ImageRendererComponent(RenderLayer.GUI);
-		ImageChooserSounds chooser = new ImageChooserSounds(true);
 		object.addComponent(area);
 		object.addComponent(image);
-		object.addComponent(chooser);
 		object.addComponent(renderer);
 		object.addComponent(new ButtonHandlerSound());
 		
