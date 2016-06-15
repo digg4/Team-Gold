@@ -18,7 +18,7 @@ public class PauseMenuBackgroundPrefab extends PrototypedPrefab {
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0f,0f,1f,1f);
-		ImageComponent image = new ImageComponent("res/gui/Menu-Background.png");
+		ImageComponent image = new ImageComponent("res/background/Menu-Background.png");
 		ImageRendererComponent renderer = new ImageRendererComponent();
 		object.addComponent(area);
 		object.addComponent(image);

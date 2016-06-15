@@ -62,7 +62,9 @@ public class GameStatsPersistenceServiceProvider implements Provider<GameStatsPe
 		@Override
 		public void saveStats() {
 			try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
-				stream.writeObject(stats);
+				if (stats != null) {
+					stream.writeObject(stats);
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

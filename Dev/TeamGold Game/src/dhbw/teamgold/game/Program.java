@@ -56,7 +56,6 @@ public final class Program {
 		Services.provide(new HighscoreServiceProvider());
 		Services.provide(new GameTimeServiceProvider());
 		Services.provide(new GameStatsServiceProvider());
-		Services.provide(new AssetsServiceProvider());
 	}
 
 	/**

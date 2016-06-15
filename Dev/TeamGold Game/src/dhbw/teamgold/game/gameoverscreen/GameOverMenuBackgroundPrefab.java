@@ -12,7 +12,7 @@ public class GameOverMenuBackgroundPrefab extends PrototypedPrefab {
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0f,0f,1f,1f);
-		ImageComponent  image = new ImageComponent("res/gui/Exmatrikulationsbescheid.png");
+		ImageComponent  image = new ImageComponent("res/background/GameOver.png");
 		ImageRendererComponent imageRenderer = new ImageRendererComponent(RenderLayer.BACKGROUND);
 		object.addComponent(area);
 		object.addComponent(image);

@@ -7,7 +7,7 @@ import dhbw.teamgold.engine.core.Component;
 
 public class CountdownComponent extends Component{
 	private static final Runnable DO_NOTHING = () ->{};
-	private float secondsLeft = 10;
+	private float secondsLeft = 5;
 	private Runnable callback = DO_NOTHING;
 	
 	public void onEnd(Runnable callback){

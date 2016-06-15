@@ -12,14 +12,24 @@ public class ButtonHandlerSound extends Component {
 
 	@Require
 	AreaComponent area;
-
+	
+	private boolean sounds;
 	AssetsService assetsService = Services.get(AssetsService.class);
+	
 	@Override
 	public void onMouseButtonPressed(MouseButtonArguments arguments) {
 		float x = arguments.getX();
 		float y = arguments.getY();
 		if (area.contains(x, y)) {
-			assetsService.muteAll();
+			if(sounds = true){
+				sounds = false;
+				ImageChooserSounds imageChooser = new ImageChooserSounds(sounds);
+				assetsService.muteAll();
+			}else{
+				sounds = false;
+				ImageChooserSounds imageChooser = new ImageChooserSounds(sounds);
+			}
+			
 		}
 	}
 }

@@ -14,5 +14,11 @@ public class ImageChooserLivesComponent extends Component {
 
 	@Override
 	public void onRenderGui(RenderArguments arguments) {
+		int lives = gameStatsService.getStats().getLives();
+		switch(lives){
+		case 1: image.setImage("res/gui/1Leben.png");break;
+		case 2: image.setImage("res/gui/2Leben.png");break;
+		default: image.setImage("res/gui/3Leben.png");break;
+		}
 	}
 }

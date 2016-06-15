@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.common.prefabs;
+package dhbw.teamgold.game.statsscreen;
 
 import org.newdawn.slick.Color;
 
@@ -7,27 +7,19 @@ import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.common.components.RectangeRendererComponent;
+import dhbw.teamgold.engine.service.Services;
+import dhbw.teamgold.game.common.services.HighscoreService;
 
-public class TextDisplayPrefab extends PrototypedPrefab {
-	
-	private String textToShow = "";
-	
-	public TextDisplayPrefab(String text) {
-		this.textToShow = text;
-	}
-	
+
+public class StatsHighscorePrefab extends PrototypedPrefab {
+	private HighscoreService highscoreService = Services.get(HighscoreService.class);
 	@Override
 	protected void initializeGameObject(GameObject object) {
-		AreaComponent area = new AreaComponent(0.35f,0.4f,0.3f,0.3f);
-		TextComponent text = new TextComponent(textToShow);
+		AreaComponent area = new AreaComponent(0.36f, 0.65f, 0.25f, 0.1f);
+		TextComponent text = new TextComponent("Highscore: " + highscoreService.getHighscore());
 		TextRendererComponent textRenderer = new TextRendererComponent();
-		
-		
-		textRenderer.setTextColor(Color.black);
-
+		textRenderer.setTextColor(Color.red);
 		object.addComponent(area);
-	//	object.addComponent(rectangleRenderer);
 		object.addComponent(text);
 		object.addComponent(textRenderer);
 	}

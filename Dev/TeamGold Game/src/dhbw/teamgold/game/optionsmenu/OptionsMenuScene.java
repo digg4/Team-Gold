@@ -17,6 +17,7 @@ public class OptionsMenuScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
+		this.addGameObject(new SoundPlayer());
 		this.addGameObject(new OptionsBackgroundPrefab());
 		this.addGameObject(new SoundButtonPrefab());
 		this.addGameObject(new TextButtonPrefab());

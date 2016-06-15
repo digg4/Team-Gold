@@ -14,13 +14,11 @@ public class TutorialPrefab extends PrototypedPrefab {
 
 	@Override
 	protected void initializeGameObject(GameObject object) {
-		AreaComponent area = new AreaComponent(0.355f,0.5f ,0.3f, 0.3f);
+		AreaComponent area = new AreaComponent(0.23f,0.5f ,0.3f, 0.3f);
 		TextComponent text = new TextComponent(Messages.getString("OptionsMenu.Tutorial"));
 		TextRendererComponent renderer = new TextRendererComponent();
-		RectangeRendererComponent drawer = new RectangeRendererComponent();
-		renderer.setTextColor(Color.red);
+		renderer.setTextColor(Color.white);
 		object.addComponent(area);
-		object.addComponent(drawer);
 		object.addComponent(text);
 		object.addComponent(renderer);
 		

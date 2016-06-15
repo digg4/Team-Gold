@@ -16,8 +16,8 @@ public class TimeOverMenuScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
-		this.addGameObject(new TextDisplayPrefab(Messages.getString("TimeOverMenu.TimeOver")));
-		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.426f, 0.75f, 0.15f, 0.05f),
+		this.addGameObject(new TimeOverMenuSceneBackgroundPrefab());
+		this.addGameObject(new SwitchSceneButtonPrefab(new Rectangle(0.4f, 0.75f, 0.15f, 0.05f),
 				Messages.getString("TimeOverMenu.Back"), SceneIds.MAIN_MENU));
 	}
 

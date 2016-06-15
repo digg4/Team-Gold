@@ -77,8 +77,7 @@ public class AssetsServiceProvider implements Provider<AssetsService> {
 
 		@Override
 		public void muteAll() {
-			Set<String> keys = soundCache.keySet();
-			keys.forEach(Key -> soundCache.get(Key).stop());
+			soundCache.values().forEach(Sound::stop);		
 		}
 	}
 }

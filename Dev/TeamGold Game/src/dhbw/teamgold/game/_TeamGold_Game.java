@@ -44,7 +44,7 @@ public class _TeamGold_Game extends StateBasedGame {
 		this.addState(new Minigame1Scene());
 		
 		//this.enterState(SceneIds.SPLASH_SCREEN);
-		this.enterState(SceneIds.GAME_1);
+		this.enterState(SceneIds.GAME_OVER_MENU);
 	}
 
 }
