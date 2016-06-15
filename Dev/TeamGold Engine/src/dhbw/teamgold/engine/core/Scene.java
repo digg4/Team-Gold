@@ -17,6 +17,7 @@ import dhbw.teamgold.engine.behavior.RenderArguments;
 import dhbw.teamgold.engine.behavior.UpdateArguments;
 import dhbw.teamgold.engine.behavior.services.BehaviorArgumentService;
 import dhbw.teamgold.engine.core.services.GameObjectService;
+import dhbw.teamgold.engine.core.services.SceneHistoryService;
 import dhbw.teamgold.engine.service.Services;
 
 /**
@@ -36,6 +37,7 @@ public abstract class Scene extends BasicGameState {
 
 	private static BehaviorArgumentService behaviorArgumentService;
 	private static GameObjectService gameObjectService;
+	private static SceneHistoryService sceneHistoryService;
 
 	private static void staticInjectServices() {
 		if (behaviorArgumentService == null) {
@@ -44,6 +46,10 @@ public abstract class Scene extends BasicGameState {
 
 		if (gameObjectService == null) {
 			gameObjectService = Services.get(GameObjectService.class);
+		}
+		
+		if (sceneHistoryService == null) {
+			sceneHistoryService = Services.get(SceneHistoryService.class);
 		}
 	}
 
@@ -197,7 +203,12 @@ public abstract class Scene extends BasicGameState {
 	public void exitGame() {
 		game.getContainer().exit();
 	}
-
+	
+	@Override
+	public void enter(GameContainer container, StateBasedGame game) throws SlickException {
+		sceneHistoryService.pushSceneId(getID());
+	}
+	
 	/**
 	 * Method to be called on initializing this Scene. In here you should add
 	 * all GameObjects.
