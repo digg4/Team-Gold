@@ -6,7 +6,6 @@ import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.Messages;
 import dhbw.teamgold.game.SceneIds;
 import dhbw.teamgold.game.common.prefabs.SwitchSceneButtonPrefab;
-import dhbw.teamgold.game.common.prefabs.TextDisplayPrefab;
 
 public class TimeOverMenuScene extends Scene {
 

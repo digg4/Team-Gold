@@ -8,7 +8,6 @@ import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.Messages;
-import dhbw.teamgold.game.common.components.RectangeRendererComponent;
 
 public class TutorialPrefab extends PrototypedPrefab {
 

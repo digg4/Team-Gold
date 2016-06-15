@@ -8,8 +8,6 @@ import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.engine.core.services.SceneHistoryService;
-import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.optionsmenu.components.ResumeeButtonHandler;
 
 public class ResumeeButtonPrefab extends PrototypedPrefab {

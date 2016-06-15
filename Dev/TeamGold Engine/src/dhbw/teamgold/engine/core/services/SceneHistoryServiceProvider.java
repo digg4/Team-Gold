@@ -1,7 +1,5 @@
 package dhbw.teamgold.engine.core.services;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 import dhbw.teamgold.engine.service.Provider;

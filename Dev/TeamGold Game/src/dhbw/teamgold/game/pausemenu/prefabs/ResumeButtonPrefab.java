@@ -5,13 +5,11 @@ import org.newdawn.slick.Color;
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.components.ImageComponent;
 import dhbw.teamgold.engine.components.ImageRendererComponent;
+import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
-import dhbw.teamgold.engine.components.ImageRendererComponent.RenderLayer;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.common.components.SwitchSceneButtonHandler;
 import dhbw.teamgold.game.optionsmenu.components.ResumeeButtonHandler;
 
 public class ResumeButtonPrefab extends PrototypedPrefab {

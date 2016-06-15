@@ -6,7 +6,6 @@ import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 import dhbw.teamgold.engine.core.services.SceneHistoryService;
 import dhbw.teamgold.engine.service.Services;
-import dhbw.teamgold.game.SceneIds;
 
 public class ResumeeButtonHandler extends Component {
 	@Require

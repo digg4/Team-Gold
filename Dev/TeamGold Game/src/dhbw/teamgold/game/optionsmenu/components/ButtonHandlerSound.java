@@ -6,7 +6,6 @@ import dhbw.teamgold.engine.components.ImageComponent;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 import dhbw.teamgold.engine.core.services.AssetsService;
-import dhbw.teamgold.engine.service.Service;
 import dhbw.teamgold.engine.service.Services;
 
 public class ButtonHandlerSound extends Component {

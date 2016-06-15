@@ -7,7 +7,6 @@ import dhbw.teamgold.engine.components.TextComponent;
 import dhbw.teamgold.engine.components.TextRendererComponent;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
-import dhbw.teamgold.game.common.components.RectangeRendererComponent;
 
 public class TextDisplayPrefab extends PrototypedPrefab {
 	

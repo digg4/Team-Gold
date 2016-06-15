@@ -1,42 +1,35 @@
 package dhbw.teamgold.game.minigames.components;
 
-import org.newdawn.slick.geom.Rectangle;
-import org.newdawn.slick.geom.Transform;
-
 import dhbw.teamgold.engine.behavior.MouseButtonArguments;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
-import dhbw.teamgold.game.SceneIds;
+import dhbw.teamgold.engine.service.Services;
+import dhbw.teamgold.game.common.services.MiniGameSelectorService;
 
 public class WaterTapController extends Component {
-	
+
+	private static final float RADIANS_PER_TICK = (float) (Math.PI / 12);
+	private static final int CLICKS_TO_WIN = 20;
+
+	private MiniGameSelectorService miniGameSelectorService = Services.get(MiniGameSelectorService.class);
+
 	@Require
-	private WaterTapTransform transform;
-	
-	private int clicksToDo = 10;
-	
+	private WaterTapTransfromComponent transform;
+
+	private int remainingTicks = CLICKS_TO_WIN;
+
 	@Override
 	public void onMouseButtonPressed(MouseButtonArguments arguments) {
-		float x = transform.getX();
-		float y = transform.getY();
-		float width = transform.getWidth();
-		float height = transform.getHeight();
-		float angle = transform.getAngle();
-		float mouseX = arguments.getX();
-		float mouseY = arguments.getY();
-		
-		Rectangle rectangle = new Rectangle(x, y, width, height);
-		
-		rectangle.transform(Transform.createRotateTransform((float) (angle / 180 * Math.PI * 2)));
-				
-		if (rectangle.contains(mouseX, mouseY)) {
-			angle += 5;
-			transform.setAngle(angle);
-			clicksToDo--;
-			
-			if (clicksToDo <= 0) {
-				getGameObject().getScene().switchScene(SceneIds.MAIN_MENU);
-			}
+		if (transform.getBounds().contains(arguments.getX(), arguments.getY())) {
+			transform.rotate(RADIANS_PER_TICK);
+			remainingTicks--;
+			checkForWin();
 		}
-	}	
+	}
+
+	private void checkForWin() {
+		if (remainingTicks <= 0) {
+			getGameObject().getScene().switchScene(miniGameSelectorService.getNextMiniGameId());
+		}
+	}
 }

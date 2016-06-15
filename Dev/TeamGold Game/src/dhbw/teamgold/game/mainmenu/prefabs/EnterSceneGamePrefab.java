@@ -14,8 +14,6 @@ import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.mainmenu.components.ButtonDisabledComponent;
 import dhbw.teamgold.game.mainmenu.components.StartGameButtonClickHandler;
 
-
-
 public class EnterSceneGamePrefab extends PrototypedPrefab {
 	static Rectangle bounds =	new Rectangle( 0.01f, 0.79f, 0.15f, 0.05f);
 	@Override
