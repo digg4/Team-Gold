@@ -2,6 +2,7 @@ package dhbw.teamgold.engine.core.services;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 import dhbw.teamgold.engine.service.Provider;
 
@@ -19,20 +20,24 @@ public class SceneHistoryServiceProvider implements Provider<SceneHistoryService
 	
 	private static class SceneHistoryServiceImpl implements SceneHistoryService {
 
-		private Queue<Integer> history = new LinkedList<>();
-		private Integer currentId = null;
+		private static final int LOAD_SIZE = 10;
+		private Stack<Integer> history = new Stack<>();
 		
 		@Override
 		public int popLastSceneId() {
-			return history.poll();
+			return history.pop();
 		}
 
 		@Override
 		public void pushSceneId(int id) {
-			if (currentId != null) {
-				history.add(currentId);
+			history.push(id);
+			limitStackSize();
+		}
+
+		private void limitStackSize() {
+			if (history.size() > LOAD_SIZE) {
+				history.remove(0);
 			}
-			currentId = id;
 		}
 	}
 }
