@@ -18,7 +18,7 @@ public class GameStatsServiceProvider implements Provider<GameStatsService> {
 	
 	private static class GameStatsServiceImpl implements GameStatsService {
 
-		private static final int START_LIVES = 3;
+		private static final int START_LIVES = 2;
 		private static final int START_SCORE = 0;
 		private static final int START_DIFFICULTY = 0;
 		

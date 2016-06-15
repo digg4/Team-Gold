@@ -1,0 +1,117 @@
+Games:
+1 Straßen Streuen im "Winter"
+2 Straße überqueren um Zug zu bekommen
+3 Letzte Apfeltasche dem Lehrer wegnehmen
+4 Müll
+5 Wasserhahn
+6 Beamer reparieren
+___________________________________________________
+
+
+10 vor 12 bis:
+___________________________________________________
+Startguthaben von ... Euro
+
+
+Zeit: 10 insgesamt
+Anfangszeit Pro Level: 30 sek
+Nach jedem 3 gewonnenem Spiel verkürzung der Zeit um 2 Sek
+Minimal Zeit: 5 sek
+
+
+1:
+Sicht: Von oben mit beiden Treppen oder von vorne mit einer Treppe
+Ablauf: Folgen einer Linie mit gedrückter Maus
+	oder
+	Auf den Treppen wagerecht lang ziehen und auf der Brücke einen langen Strich
+	
+Gewonnen: Wenn alles gestreut und Zeit übrig
+Verloren: Zeitabgelaufen, Nicht alles gestreut?
+Folgevideo: Verloren: jemand rutscht auf die Straße
+	    Gewonnen: Studenten überqueren sicher die Brücke
+
+2:
+Sicht: Auf eine Ampel
+Ablauf: Ampel ist rot und springt für eine kurze Zeit auf Grün um
+	Es muss im richtigem Moment die Maus taste gedrückt werden zum überqueren der Straße
+	
+Gewonnen: Wenn die Taste im richtigem Moment gedrückt worden ist.
+Verloren: Wenn man während Rot drückt oder zeit abläuft
+
+Folgevideo: Verloren: Man wird überfahren / Tram fährt vor den Augen weg.
+	    Gewonnen: Student errreicht sicher und pünktlich die Tram/ Steigt in die Tram
+
+3 Version 1:
+Sicht: Von oben oder vorne auf eine Theke mit verschiedenenen Gebäckstücken und einer Apfeltasche
+Ablauf: Innerhalb des Zeitlimits muss der Student auf die Apfeltasche klicken um sie zu kaufen(Suchen)
+
+Gewonnen: Hat sie innerhalb der Zeit gefunden
+Verloren: Nicht gefunden oder auf ein anderes Gebäckstück geklickt.
+Alternative: Wenn auf etwas falsches Geklcikt wurde verliert man etwas von seinen Punkten, kann jedoch das Level weiterspielen.
+
+Folgevideo: Verloren: Herr Kruse nimmt sich die Apfeltasche
+	    Gewonnen: Man nimmt sich selbst die Apfeltasche
+
+3 Version 2:
+Sicht: Von Vorne auf min. 3 Cloches(Glocken um essen abzudecken)
+Ablauf. Am Anfang des Mini-Games werden einem gezeigt wo sich die Apfeltasche befindet und was sich unter den anderen befindet.
+	Dann werden die Cloches gemischt und der Spieler muss erraten, unter welcher Cloche sich die Apfeltasche befindet.
+
+Gewonnen: Tippt auf das richtige
+Verloren: Tippt auf das Falsche, entscheidet sich während der Zeit nicht
+
+Folgevideo: Verloren: Herr Kruse nimmt sich die Apfeltasche  öffnet die Cloche vorher
+	    Gewonnen: Man nimmt sich selbst die Apfeltasche
+
+4.
+Sicht: Von vorne auf einen überfüllten Mülleimer
+Ablauf: Um den Mülleimer liegt noch mehr Müll herum und dieser muss auf den bereits vollen Mülleimer gestapelt werden und darf dabei nicht runterfallen
+
+Gewonnen: Müll bleibt liegen und kein Müll liegt noch auf dem Boden
+Verloren: zeit abgelaufen
+
+Folgevideo: Verloren: Müll-Eimer wird umgetreten
+	    Gewonnen: 
+
+5.
+Sicht: Von vorne auf 2 gekennzeichnete Wasserrohre
+Ablauf: Man muss so schnell wie möglich das Rote Rohr zudrehen
+
+Gewonnen: Rohr ist zugedreht
+Verloren: Rohr ist bei zeitablauf nciht ganz zugedreht oder wenn man zuerst das Blaue und dann das rote Rohr zudreht.
+
+Folgevideo: Verloren: Studenten waschen sich Hände im warmen Wasser und verbrennen sich
+	    Gewonnen: 
+
+6. Version 1
+Sicht: Blick von Vorne auf den Beamer 
+Ablauf: Man muss die lampe des Beamers herrausdrehen und mit einer neuen daneben liegenden ersetzen.
+
+Gewonnen: Lampe ist getauscht
+Verloren: Alte Lampe bzw. keine Lampe ist im Beamer während die Zeit abläuft
+
+Folgevideo: Verloren: Explosion
+	    Gewonnen: Bemaer zeigt DHBW - Logo an der Wand/Gesicht
+
+6. Version 2
+Sicht: Blick von hinten auf den Beamer.
+Ablauf: Austausch von falsch gekennzeichneten Kabeln. Z.b. rotes kabel steckt im Anschluss für blaues Kabel und blaues im Rotem
+
+Gewonnen: Kabel sind getauscht
+Verloren: Ein Kabel ist richtig eins falsch, Kein Kabel ist richtig. Kein  oder ein Kabel steckt im Beamer.
+
+Folgevideo: Verloren: Explosion/Mänchen wird traurig und Beamer fängt an zu brennen
+	    Gewonnen: Bemaer zeigt DHBW - Logo an der Wand
+
+
+_____________________________________________________________________
+Geräusche:
+1: Motorgeräusche
+2: Hupen und Bremsen beim verlieren. Bei Rot motorgeräusche. 
+3. Café musik, Klirrendes Geschirr, Redende Leute
+4. -
+5. Fließendes Wasser
+6. NERVIGES Piepen
+
+Musik:
+

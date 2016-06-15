@@ -29,6 +29,7 @@ public class WaterTapRenderer extends Component {
 		g.setColor(color);
 		g.rotate(middleX, middleY, angle);
 		g.fillRect(x, y, width, height);
+		g.rotate(middleX, middleY, -angle);
 	}
 	
 	public void setColor(Color color) {

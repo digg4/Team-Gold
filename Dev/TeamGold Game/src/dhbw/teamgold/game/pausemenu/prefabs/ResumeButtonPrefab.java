@@ -12,13 +12,9 @@ import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.SceneIds;
 import dhbw.teamgold.game.common.components.SwitchSceneButtonHandler;
+import dhbw.teamgold.game.optionsmenu.components.ResumeeButtonHandler;
 
 public class ResumeButtonPrefab extends PrototypedPrefab {
-	/*
-	 * For this to work properly MiniGameSelectorServiceProvider has to be implemented. 
-	 * Till then it only goes to the Mainmenu
-	 */
-//	MiniGameSelectorService miniGameSelectorService = Services.get(MiniGameSelectorService.class);
 	@Override
 	protected void initializeGameObject(GameObject object) {
 		AreaComponent area = new AreaComponent(0.45f,0.4f,0.15f,0.05f);
@@ -31,9 +27,8 @@ public class ResumeButtonPrefab extends PrototypedPrefab {
 		object.addComponent(image);
 		object.addComponent(renderer);
 		object.addComponent(text);
-		object.addComponent(textRenderer);
-		//object.addComponent(new ButtonHandler(miniGameSelectorService.getCurrentMiniGameId()));		
-		object.addComponent(new SwitchSceneButtonHandler(SceneIds.MAIN_MENU));
+		object.addComponent(textRenderer);		
+		object.addComponent(new ResumeeButtonHandler());
 	}
 
 
