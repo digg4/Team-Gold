@@ -10,7 +10,7 @@ public class TextButtonPrefab extends PrototypedPrefab{
 
 	@Override
 	protected void initializeGameObject(GameObject object) {
-		AreaComponent area = new AreaComponent(0.4f,0.4f, 0.05f, 0.05f);
+		AreaComponent area = new AreaComponent(0.25f,0.38f, 0.05f, 0.05f);
 		TextComponent text = new TextComponent("Sound deaktivieren");
 		TextRendererComponent renderer = new TextRendererComponent();
 		object.addComponent(area);
