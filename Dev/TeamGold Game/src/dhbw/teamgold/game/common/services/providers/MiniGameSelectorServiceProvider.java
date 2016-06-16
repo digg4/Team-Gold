@@ -3,7 +3,6 @@ package dhbw.teamgold.game.common.services.providers;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.engine.service.Provider;
 import dhbw.teamgold.game.SceneIds;
 import dhbw.teamgold.game.common.services.MiniGameSelectorService;

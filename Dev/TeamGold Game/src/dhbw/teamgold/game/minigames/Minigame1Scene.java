@@ -12,6 +12,9 @@ import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame1Scene extends Scene {
 
+	private static final float DEFAULT_TIME = 5f;
+	private static final float DIFFICULTY_FACTOR = 0.4f;
+	
 	public Minigame1Scene() {
 		super(SceneIds.GAME_1);
 	}
@@ -20,7 +23,7 @@ public class Minigame1Scene extends Scene {
 	protected void initializeGameObjects() {
 		this.addGameObject(new BackgroundImagePrefab("res/img/game1-background.png"));
 		this.addGameObject(new GameInfoTextDisplayPrefab(getID()));
-		this.addGameObject(new GameCountdownDisplayPrefab());
+		this.addGameObject(new GameCountdownDisplayPrefab(DEFAULT_TIME, DIFFICULTY_FACTOR));
 		this.addGameObject(new BlueWaterTapPrefab());
 		this.addGameObject(new RedWaterTapPrefab());
 		this.addGameObject(new ScoreDisplayPrefab());
