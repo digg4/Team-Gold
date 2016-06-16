@@ -49,6 +49,18 @@ public class MiniGameSelectorServiceProvider implements Provider<MiniGameSelecto
 		public int getCurrentMiniGameId() {
 			return currentMiniGameId;
 		}
+
+		@Override
+		public int getCurrentWinSceneId() {
+			int gameToWinScene = SceneIds.WIN_1 - SceneIds.GAME_1;
+			return getCurrentMiniGameId() + gameToWinScene;
+		}
+
+		@Override
+		public int getCurrentLoseSceneId() {
+			int gameToLoseScene = SceneIds.LOSE_1 - SceneIds.GAME_1;
+			return getCurrentMiniGameId() + gameToLoseScene;
+		}
 		
 	}
 

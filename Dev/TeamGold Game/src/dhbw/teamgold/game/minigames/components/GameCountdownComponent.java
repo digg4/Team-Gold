@@ -4,10 +4,12 @@ import dhbw.teamgold.engine.behavior.UpdateArguments;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.common.services.GameStatsService;
+import dhbw.teamgold.game.common.services.MiniGameSelectorService;
 
 public class GameCountdownComponent extends Component {
 
 	private GameStatsService gameStatsService = Services.get(GameStatsService.class);
+	private MiniGameSelectorService selectorService = Services.get(MiniGameSelectorService.class);
 
 	private float initialTime;
 	private float secondsLeft;
@@ -29,7 +31,7 @@ public class GameCountdownComponent extends Component {
 		}
 
 		if (secondsLeft <= 0) {
-
+			getGameObject().getScene().switchScene(selectorService.getCurrentLoseSceneId());
 		}
 	}
 }
