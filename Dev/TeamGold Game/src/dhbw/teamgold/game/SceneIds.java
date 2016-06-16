@@ -22,6 +22,18 @@ public interface SceneIds {
 	int GAME_4 = 24;
 	int GAME_5 = 25;
 
+	int WIN_1 = 31;
+	int WIN_2 = 32;
+	int WIN_3 = 33;
+	int WIN_4 = 34;
+	int WIN_5 = 35;
+
+	int LOSE_1 = 41;
+	int LOSE_2 = 42;
+	int LOSE_3 = 43;
+	int LOSE_4 = 44;
+	int LOSE_5 = 45;
+
 	/**
 	 * All the IDs of Scenes that should only show something to to user but
 	 * don't need any action of the user to be performed.
@@ -36,4 +48,12 @@ public interface SceneIds {
 	 * All the IDs of mini-games.
 	 */
 	int[] GAMES = { GAME_1, GAME_2, GAME_3, GAME_4, GAME_5 };
+	/**
+	 * The IDs of the win-scenes.
+	 */
+	int[] WINS = { WIN_1, WIN_2, WIN_3, WIN_4, WIN_5 };
+	/**
+	 * The IDs of the lose-scenes.
+	 */
+	int[] LOSES = { LOSE_1, LOSE_2, LOSE_3, LOSE_4, LOSE_4, };
 }
