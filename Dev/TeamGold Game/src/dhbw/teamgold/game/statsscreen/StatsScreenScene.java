@@ -20,8 +20,10 @@ public class StatsScreenScene extends Scene {
 
 	private CountdownPrefab countdown = new CountdownPrefab(() -> {
 		if (stats.getStats().getLives() <= 0) {
+			stats.resetStats();
 			this.switchScene(SceneIds.GAME_OVER_MENU);
 		} else if (gameTime.isTimeOver()) {
+			stats.resetStats();
 			this.switchScene(SceneIds.TIME_OVER_MENU);
 		} else {
 			this.switchScene(selector.getNextMiniGameId());
