@@ -194,6 +194,12 @@ public abstract class Scene extends BasicGameState {
 		forEachComponent(component -> component.onMouseMove(arguments));
 	}
 	
+	@Override
+	public void mouseDragged(int oldx, int oldy, int newx, int newy) {
+		mouseMoved(oldx, oldy, newx, newy);
+	}
+	
+	
 	/**
 	 * Closes the game.
 	 */
