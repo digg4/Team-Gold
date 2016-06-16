@@ -27,7 +27,7 @@ public class GameCountdownComponent extends Component {
 	@Override
 	public void onUpdate(UpdateArguments arguments) {
 		if (secondsLeft > 0) {
-			secondsLeft -= arguments.getSecondsSinceLastUpdate();
+	//		secondsLeft -= arguments.getSecondsSinceLastUpdate();
 		}
 
 		if (secondsLeft <= 0) {

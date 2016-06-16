@@ -9,7 +9,7 @@ import dhbw.teamgold.game.common.services.MiniGameSelectorService;
 public class WaterTapController extends Component {
 
 	private static final float RADIANS_PER_TICK = (float) (Math.PI / 12);
-	private static final int CLICKS_TO_WIN = 15;
+	private static final int CLICKS_TO_WIN = 20;
 
 	private MiniGameSelectorService miniGameSelectorService = Services.get(MiniGameSelectorService.class);
 
