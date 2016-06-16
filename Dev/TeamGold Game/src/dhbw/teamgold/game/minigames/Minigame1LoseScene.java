@@ -2,6 +2,7 @@ package dhbw.teamgold.game.minigames;
 
 import dhbw.teamgold.engine.core.Scene;
 import dhbw.teamgold.game.SceneIds;
+import dhbw.teamgold.game.minigames.prefabs.LoseLifePrefab;
 import dhbw.teamgold.game.minigames.prefabs.PostGameCountdownPrefab;
 
 public class Minigame1LoseScene extends Scene {
@@ -13,6 +14,7 @@ public class Minigame1LoseScene extends Scene {
 	@Override
 	protected void initializeGameObjects() {
 		this.addGameObject(new PostGameCountdownPrefab(5));
+		this.addGameObject(new LoseLifePrefab());
 	}
 
 }
