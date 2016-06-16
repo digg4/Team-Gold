@@ -84,9 +84,6 @@ public abstract class Scene extends BasicGameState {
 	@Override
 	public final void init(GameContainer container, StateBasedGame game) throws SlickException {
 		this.game = game;
-
-		gameObjects.clear();
-		initializeGameObjects();
 	}
 
 	@Override
@@ -206,6 +203,9 @@ public abstract class Scene extends BasicGameState {
 	
 	@Override
 	public void enter(GameContainer container, StateBasedGame game) throws SlickException {
+		
+		gameObjects.clear();
+		initializeGameObjects();
 		sceneHistoryService.pushSceneId(getID());
 	}
 	
