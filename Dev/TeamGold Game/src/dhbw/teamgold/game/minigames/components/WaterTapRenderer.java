@@ -1,6 +1,5 @@
 package dhbw.teamgold.game.minigames.components;
 
-import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 
 import dhbw.teamgold.engine.behavior.RenderArguments;
