@@ -2,9 +2,7 @@ package dhbw.teamgold.game.minigames.components;
 
 import dhbw.teamgold.engine.behavior.UpdateArguments;
 import dhbw.teamgold.engine.core.Component;
-import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.SceneIds;
-import dhbw.teamgold.game.common.services.MiniGameSelectorService;
 
 public class PostgameCountdownComponent extends Component {
 

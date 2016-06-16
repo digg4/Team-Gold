@@ -10,6 +10,7 @@ import dhbw.teamgold.game.common.services.MiniGameSelectorService;
 import dhbw.teamgold.game.statsscreen.prefabs.CountdownPrefab;
 import dhbw.teamgold.game.statsscreen.prefabs.LivesStatsPrefab;
 import dhbw.teamgold.game.statsscreen.prefabs.PointsStatsPrefab;
+import dhbw.teamgold.game.statsscreen.prefabs.SaveGamePrefab;
 
 public class StatsScreenScene extends Scene {
 
@@ -37,6 +38,7 @@ public class StatsScreenScene extends Scene {
 		this.addGameObject(new LivesStatsPrefab());
 		this.addGameObject(new PointsStatsPrefab());
 		this.addGameObject(new StatsHighscorePrefab());
+		this.addGameObject(new SaveGamePrefab());
 		this.addGameObject(countdown);
 
 	}
