@@ -14,6 +14,7 @@ import dhbw.teamgold.game.SceneIds;
 import dhbw.teamgold.game.common.prefabs.BackgroundImagePrefab;
 import dhbw.teamgold.game.common.prefabs.ScoreDisplayPrefab;
 import dhbw.teamgold.game.common.services.GameStatsService;
+import dhbw.teamgold.game.minigames.prefabs.GameInfoTextDisplayPrefab;
 import dhbw.teamgold.game.minigames.prefabs.TrashBinPrefab;
 import dhbw.teamgold.game.minigames.prefabs.TrashPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
@@ -34,6 +35,7 @@ public class Minigame4Scene extends Scene {
 	protected void initializeGameObjects() {
 		createTrash();
 		
+		this.addGameObject(new GameInfoTextDisplayPrefab(getID()));
 		this.addGameObject(new BackgroundImagePrefab("res/img/game4-background.png"));
 		this.addGameObject(new ScoreDisplayPrefab());
 		this.addGameObject(new LivesPrefab());

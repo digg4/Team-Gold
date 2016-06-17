@@ -15,6 +15,7 @@ import dhbw.teamgold.game.minigames.prefabs.ApplePiePrefab;
 import dhbw.teamgold.game.minigames.prefabs.CherryPiePrefab;
 import dhbw.teamgold.game.minigames.prefabs.FoodCoverPrefab;
 import dhbw.teamgold.game.minigames.prefabs.GameCountdownDisplayPrefab;
+import dhbw.teamgold.game.minigames.prefabs.GameInfoTextDisplayPrefab;
 import dhbw.teamgold.game.minigames.prefabs.PiePrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
@@ -56,6 +57,7 @@ public class Minigame2Scene extends Scene {
 	protected void initializeGameObjects() {
 		Collections.shuffle(indices);
 		
+		this.addGameObject(new GameInfoTextDisplayPrefab(getID()));
 		this.addGameObject(new PiePrefab(pieAreas.get(indices.get(0))));
 		this.addGameObject(new FoodCoverPrefab(OnClickAction.LOSE, coverAreas.get(indices.get(0))));
 		this.addGameObject(new ApplePiePrefab(pieAreas.get(indices.get(1))));

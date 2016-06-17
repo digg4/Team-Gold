@@ -18,16 +18,17 @@ import dhbw.teamgold.game.minigames.components.CableDataComponent;
 import dhbw.teamgold.game.minigames.prefabs.BlueCablePrefab;
 import dhbw.teamgold.game.minigames.prefabs.CablesWinCheckerPrefab;
 import dhbw.teamgold.game.minigames.prefabs.GameCountdownDisplayPrefab;
+import dhbw.teamgold.game.minigames.prefabs.GameInfoTextDisplayPrefab;
 import dhbw.teamgold.game.minigames.prefabs.GreenCablePrefab;
 import dhbw.teamgold.game.minigames.prefabs.RedCablePrefab;
 import dhbw.teamgold.game.minigames.prefabs.YellowCablePrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame3Scene extends Scene {
-	
+
 	private static final float INITIAL_SECONDS = 8f;
 	private static final float DIFFICULTY_FACTOR = 0.2f;
-	
+
 	private List<Point> startPoints = new LinkedList<>();
 	private List<Point> endPoints = new LinkedList<>();
 
@@ -70,11 +71,13 @@ public class Minigame3Scene extends Scene {
 		initStartPoints();
 		initEndPoints();
 		initCables();
-
+		
+		this.addGameObject(new GameInfoTextDisplayPrefab(getID()));
+		
 		this.addGameObject(new BackgroundImagePrefab("res/img/game3-background.png"));
 		this.addGameObject(new ScoreDisplayPrefab());
 		this.addGameObject(new LivesPrefab());
-		
+
 		this.addGameObject(redCable);
 		this.addGameObject(greenCable);
 		this.addGameObject(blueCable);
