@@ -20,8 +20,9 @@ public class MainMenuScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
-
+		
 		this.addGameObject(new MainMenuBackgroundPrefab());
+		this.addGameObject(new PlanePrefab());
 		this.addGameObject(new ButtonBackGroundPrefab());
 		this.addGameObject(new GameTimeDisplayPrefab());
 		this.addGameObject(new HighscorePrefab());
