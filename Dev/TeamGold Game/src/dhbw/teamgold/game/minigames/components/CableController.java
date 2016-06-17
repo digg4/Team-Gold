@@ -11,24 +11,27 @@ public class CableController extends Component {
 
 	@Require
 	private CableDataComponent data;
-	
+
 	private boolean dragging = false;
 
 	@Override
 	public void onMouseButtonPressed(MouseButtonArguments arguments) {
-		if (data.dragContains(arguments.getX(), arguments.getY())) {
+		if (data.dragContains(arguments.getX(), arguments.getY()) && !data.isFinished()) {
 			dragging = true;
-			data.setResetDrag(false);
 		}
 	}
 
 	@Override
 	public void onMouseButtonRelease(MouseButtonArguments arguments) {
 		if (data.dragContains(arguments.getX(), arguments.getY())) {
-			System.out.println("CableController.onMouseButtonRelease()");
+			if (data.getEnd().contains(data.getDrag())) {
+				data.setFinished(true);
+			} else {
+				data.resetDrag();
+			}
 			dragging = false;
-			data.setResetDrag(true);
-		}}
+		}
+	}
 
 	@Override
 	public void onMouseMove(MouseMoveArguments arguments) {

@@ -6,8 +6,8 @@ import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.PrototypedPrefab;
 import dhbw.teamgold.game.minigames.components.CableController;
 import dhbw.teamgold.game.minigames.components.CableDataComponent;
+import dhbw.teamgold.game.minigames.components.CableDifficultyAdapter;
 import dhbw.teamgold.game.minigames.components.CableRenderer;
-import dhbw.teamgold.game.minigames.components.CableResetComponent;
 
 public class CablePrefab extends PrototypedPrefab {
 
@@ -24,7 +24,7 @@ public class CablePrefab extends PrototypedPrefab {
 		object.addComponent(new CableDataComponent(start, end));
 		object.addComponent(new CableRenderer());
 		object.addComponent(new CableController());
-		object.addComponent(new CableResetComponent());
+		object.addComponent(new CableDifficultyAdapter());
 	}
 
 }

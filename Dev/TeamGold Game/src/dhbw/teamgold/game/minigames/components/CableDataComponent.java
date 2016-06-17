@@ -20,7 +20,10 @@ public class CableDataComponent extends Component {
 	private Point drag;
 	private Point startPoint;
 	private Point endPoint;
-	private boolean resetDrag = false;
+	private boolean isFinished;
+	
+	private float sceneWidth;
+	private float sceneHeight;
 	
 	public CableDataComponent(Point startPoint, Point endPoint) {
 		this.startPoint = startPoint;
@@ -29,12 +32,16 @@ public class CableDataComponent extends Component {
 	
 	@Override
 	public void onInitializeGameObject(InitializeArguments arguments) {
-		float width = getGameObject().getScene().getSceneWidth();
-		float height = getGameObject().getScene().getSceneHeight();
+		sceneWidth = getGameObject().getScene().getSceneWidth();
+		sceneHeight = getGameObject().getScene().getSceneHeight();
 
-		start = new Circle(startPoint.getX() * width, startPoint.getY() * height, WIDTH);
-		end = new Circle(endPoint.getX() * width, endPoint.getY() * height, WIDTH);
-		drag = new Point(startPoint.getX() * width, startPoint.getY() * height + HEIGHT);
+		start = new Circle(startPoint.getX() * sceneWidth, startPoint.getY() * sceneHeight, WIDTH);
+		end = new Circle(endPoint.getX() * sceneWidth, endPoint.getY() * sceneHeight, WIDTH);
+		resetDrag();
+	}
+	
+	public void resetDrag() {
+		drag = new Point(startPoint.getX() * sceneWidth, startPoint.getY() * sceneHeight + HEIGHT);
 	}
 	
 	public boolean dragContains(float x, float y) {
@@ -73,12 +80,16 @@ public class CableDataComponent extends Component {
 		this.drag = drag;
 	}
 
-	public boolean isResetDrag() {
-		return resetDrag;
+	public boolean isFinished() {
+		return isFinished;
 	}
 
-	public void setResetDrag(boolean resetDrag) {
-		this.resetDrag = resetDrag;
+	public void setFinished(boolean isFinished) {
+		if (isFinished) {
+			this.drag = new Point(end.getCenterX(), end.getCenterY());
+		}
+		
+		this.isFinished = isFinished;
 	}
 
 }
