@@ -23,7 +23,7 @@ public class CountdownComponent extends Component {
 		}
 		if (secondsLeft <= 0) {
 			callback.run();
-			secondsLeft = 10;
+			secondsLeft = 5;
 		}
 	}
 }

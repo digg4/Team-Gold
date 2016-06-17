@@ -1,4 +1,4 @@
-package dhbw.teamgold.game.mainmenu;
+package dhbw.teamgold.game.mainmenu.prefabs;
 
 import org.newdawn.slick.geom.Rectangle;
 

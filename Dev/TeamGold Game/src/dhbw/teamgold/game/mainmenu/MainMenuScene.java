@@ -11,6 +11,7 @@ import dhbw.teamgold.game.mainmenu.prefabs.EnterSceneGamePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.ExitGamePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.HighscorePrefab;
 import dhbw.teamgold.game.mainmenu.prefabs.MainMenuBackgroundPrefab;
+import dhbw.teamgold.game.mainmenu.prefabs.PlanePrefab;
 
 public class MainMenuScene extends Scene {
 
