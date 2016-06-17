@@ -7,6 +7,8 @@ import dhbw.teamgold.game.common.services.GameStatsService;
 import dhbw.teamgold.game.common.services.MiniGameSelectorService;
 
 public class GameCountdownComponent extends Component {
+	
+	private static final float MIN_SECONDS = 1.5f;
 
 	private GameStatsService gameStatsService = Services.get(GameStatsService.class);
 	private MiniGameSelectorService selectorService = Services.get(MiniGameSelectorService.class);
@@ -16,6 +18,7 @@ public class GameCountdownComponent extends Component {
 
 	public void init(float initialTime, float secondsPerDifficulty) {
 		initialTime -= secondsPerDifficulty * gameStatsService.getStats().getDifficulty();
+		initialTime = Math.max(MIN_SECONDS, initialTime);
 		this.initialTime = initialTime;
 		this.secondsLeft = initialTime;
 	}

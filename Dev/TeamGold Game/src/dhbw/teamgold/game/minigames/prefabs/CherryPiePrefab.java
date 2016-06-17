@@ -20,7 +20,7 @@ public class CherryPiePrefab extends PrototypedPrefab {
 	protected void initializeGameObject(GameObject object) {
 		object.addComponent(new AreaComponent(area));
 		object.addComponent(new ImageComponent("res/img/cherry-pie.png"));
-		object.addComponent(new ImageRendererComponent());		
+		object.addComponent(new ImageRendererComponent());
 	}
 
 }
