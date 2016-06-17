@@ -19,6 +19,8 @@ import dhbw.teamgold.game.minigames.prefabs.PiePrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame2Scene extends Scene {
+	private static final float DEFAULT_TIME = 8f;
+	private static final float DIFFICULTY_FACTOR = 0.2f;
 
 	private List<Rectangle> pieAreas = new LinkedList<>();
 	private List<Rectangle> coverAreas = new LinkedList<>();
@@ -63,6 +65,6 @@ public class Minigame2Scene extends Scene {
 		this.addGameObject(new BackgroundImagePrefab("res/img/game2-background.png"));
 		this.addGameObject(new ScoreDisplayPrefab());
 		this.addGameObject(new LivesPrefab());
-		this.addGameObject(new GameCountdownDisplayPrefab(8, 0.2f));
+		this.addGameObject(new GameCountdownDisplayPrefab(DEFAULT_TIME, DIFFICULTY_FACTOR));
 	}
 }

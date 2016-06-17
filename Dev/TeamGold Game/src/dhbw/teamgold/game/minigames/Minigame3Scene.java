@@ -25,8 +25,8 @@ import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame3Scene extends Scene {
 	
-	private static final float INITIAL_SECONDS = 10f;
-	private static final float DIFFICULTY_FACTOR = 0.5f;
+	private static final float INITIAL_SECONDS = 8f;
+	private static final float DIFFICULTY_FACTOR = 0.2f;
 	
 	private List<Point> startPoints = new LinkedList<>();
 	private List<Point> endPoints = new LinkedList<>();
@@ -74,11 +74,12 @@ public class Minigame3Scene extends Scene {
 		this.addGameObject(new BackgroundImagePrefab("res/img/game3-background.png"));
 		this.addGameObject(new ScoreDisplayPrefab());
 		this.addGameObject(new LivesPrefab());
-		this.addGameObject(new GameCountdownDisplayPrefab(INITIAL_SECONDS, DIFFICULTY_FACTOR));
+		
 		this.addGameObject(redCable);
 		this.addGameObject(greenCable);
 		this.addGameObject(blueCable);
 		this.addGameObject(yellowCable);
 		this.addGameObject(new CablesWinCheckerPrefab(redCable, blueCable, greenCable, yellowCable));
+		this.addGameObject(new GameCountdownDisplayPrefab(INITIAL_SECONDS, DIFFICULTY_FACTOR));
 	}
 }

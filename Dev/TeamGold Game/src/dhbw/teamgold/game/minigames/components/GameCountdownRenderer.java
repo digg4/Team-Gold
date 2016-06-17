@@ -26,7 +26,7 @@ public class GameCountdownRenderer extends Component {
 		float end = start + 360 * countdown.getPercentDone();
 		
 		Graphics g = arguments.getGraphics();
-		g.setColor(Color.white);
+		g.setColor(Color.lightGray);
 		g.fillArc(x, y, width, height, start, end);
 	}
 	
