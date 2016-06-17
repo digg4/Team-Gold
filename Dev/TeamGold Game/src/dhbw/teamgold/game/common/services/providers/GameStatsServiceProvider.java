@@ -20,7 +20,7 @@ public class GameStatsServiceProvider implements Provider<GameStatsService> {
 
 		private static final int START_LIVES = 3;
 		private static final int START_SCORE = 0;
-		private static final int START_DIFFICULTY = 1;
+		private static final int START_DIFFICULTY = 20;
 		
 		private TransientGameStats stats;
 		
