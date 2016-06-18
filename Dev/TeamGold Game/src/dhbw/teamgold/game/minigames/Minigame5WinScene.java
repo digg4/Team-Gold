@@ -14,7 +14,7 @@ public class Minigame5WinScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
-		this.addGameObject(new PostGameCountdownPrefab(5));
+		this.addGameObject(new PostGameCountdownPrefab(0.5f));
 		this.addGameObject(new IncreaseScorePrefab());
 		this.addGameObject(new IncreaseDifficultyPrefab());
 	}

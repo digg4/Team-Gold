@@ -3,18 +3,14 @@ package dhbw.teamgold.game.minigames;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.newdawn.slick.geom.Point;
 
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.core.Scene;
-import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.SceneIds;
 import dhbw.teamgold.game.common.prefabs.BackgroundImagePrefab;
 import dhbw.teamgold.game.common.prefabs.ScoreDisplayPrefab;
-import dhbw.teamgold.game.common.services.GameStatsService;
-import dhbw.teamgold.game.minigames.components.CableDataComponent;
 import dhbw.teamgold.game.minigames.prefabs.BlueCablePrefab;
 import dhbw.teamgold.game.minigames.prefabs.CablesWinCheckerPrefab;
 import dhbw.teamgold.game.minigames.prefabs.GameCountdownDisplayPrefab;
@@ -27,7 +23,7 @@ import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 public class Minigame3Scene extends Scene {
 
 	private static final float INITIAL_SECONDS = 8f;
-	private static final float DIFFICULTY_FACTOR = 0.2f;
+	private static final float DIFFICULTY_FACTOR = 0.1f;
 
 	private List<Point> startPoints = new LinkedList<>();
 	private List<Point> endPoints = new LinkedList<>();
@@ -43,9 +39,9 @@ public class Minigame3Scene extends Scene {
 
 	private void initStartPoints() {
 		startPoints.clear();
-		startPoints.add(new Point(0.48f, 0.43f));
+		startPoints.add(new Point(0.48f, 0.41f));
 		startPoints.add(new Point(0.55f, 0.45f));
-		startPoints.add(new Point(0.56f, 0.36f));
+		startPoints.add(new Point(0.56f, 0.39f));
 		startPoints.add(new Point(0.47f, 0.35f));
 		Collections.shuffle(startPoints);
 	}
@@ -53,9 +49,9 @@ public class Minigame3Scene extends Scene {
 	private void initEndPoints() {
 		endPoints.clear();
 		endPoints.add(new Point(0.30f, 0.41f));
-		endPoints.add(new Point(0.37f, 0.43f));
+		endPoints.add(new Point(0.37f, 0.41f));
 		endPoints.add(new Point(0.38f, 0.34f));
-		endPoints.add(new Point(0.29f, 0.33f));
+		endPoints.add(new Point(0.29f, 0.36f));
 		Collections.shuffle(endPoints);
 	}
 

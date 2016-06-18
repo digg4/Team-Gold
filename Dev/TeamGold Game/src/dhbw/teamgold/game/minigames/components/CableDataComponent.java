@@ -7,6 +7,7 @@ import org.newdawn.slick.geom.Shape;
 
 import dhbw.teamgold.engine.behavior.InitializeArguments;
 import dhbw.teamgold.engine.core.Component;
+import dhbw.teamgold.engine.core.Require;
 
 public class CableDataComponent extends Component {
 	
@@ -14,6 +15,9 @@ public class CableDataComponent extends Component {
 	public static final float HEIGHT = 100f;
 	private static final float DRAG_RADIUS = 10f;
 
+	@Require
+	private CableDifficultyAdapter difficultyAdapter;
+	
 	private Color color;
 	private Shape start;
 	private Shape end;
@@ -38,6 +42,8 @@ public class CableDataComponent extends Component {
 		start = new Circle(startPoint.getX() * sceneWidth, startPoint.getY() * sceneHeight, WIDTH);
 		end = new Circle(endPoint.getX() * sceneWidth, endPoint.getY() * sceneHeight, WIDTH);
 		resetDrag();
+		
+		difficultyAdapter.adaptDifficulty(this);
 	}
 	
 	public void resetDrag() {

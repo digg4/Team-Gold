@@ -13,7 +13,7 @@ public class Minigame5LoseScene extends Scene {
 
 	@Override
 	protected void initializeGameObjects() {
-		this.addGameObject(new PostGameCountdownPrefab(5));
+		this.addGameObject(new PostGameCountdownPrefab(0.5f));
 		this.addGameObject(new LoseLifePrefab());
 	}
 

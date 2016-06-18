@@ -1,19 +1,17 @@
 package dhbw.teamgold.game.minigames.components;
 
-import dhbw.teamgold.engine.behavior.InitializeArguments;
 import dhbw.teamgold.engine.behavior.UpdateArguments;
 import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 import dhbw.teamgold.engine.service.Services;
 import dhbw.teamgold.game.common.services.GameStatsService;
-import dhbw.teamgold.game.minigames.prefabs.GameCountdownDisplayPrefab;
 
 public class FoodCoverAnimator extends Component {
 
 	private static final float DEFAULT_SECONDS = 3;
 	private static final float SECONDS_PER_DIFFICULTY = 0.15f;
-	private static final float MIN_SECONDS = 1;
+	private static final float MIN_SECONDS = 0.3f;
 
 	private GameStatsService statsService = Services.get(GameStatsService.class);
 

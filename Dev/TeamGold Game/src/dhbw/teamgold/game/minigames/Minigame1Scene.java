@@ -13,7 +13,7 @@ import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 public class Minigame1Scene extends Scene {
 
 	private static final float DEFAULT_TIME = 8f;
-	private static final float DIFFICULTY_FACTOR = 0.2f;
+	private static final float DIFFICULTY_FACTOR = 0.1f;
 	
 	public Minigame1Scene() {
 		super(SceneIds.GAME_1);

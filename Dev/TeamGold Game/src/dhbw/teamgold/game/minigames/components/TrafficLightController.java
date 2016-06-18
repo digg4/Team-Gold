@@ -1,8 +1,5 @@
 package dhbw.teamgold.game.minigames.components;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import dhbw.teamgold.engine.behavior.UpdateArguments;
 import dhbw.teamgold.engine.components.ImageComponent;
 import dhbw.teamgold.engine.core.Component;

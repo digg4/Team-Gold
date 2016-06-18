@@ -14,12 +14,16 @@ import dhbw.teamgold.game.SceneIds;
 import dhbw.teamgold.game.common.prefabs.BackgroundImagePrefab;
 import dhbw.teamgold.game.common.prefabs.ScoreDisplayPrefab;
 import dhbw.teamgold.game.common.services.GameStatsService;
+import dhbw.teamgold.game.minigames.prefabs.GameCountdownDisplayPrefab;
 import dhbw.teamgold.game.minigames.prefabs.GameInfoTextDisplayPrefab;
 import dhbw.teamgold.game.minigames.prefabs.TrashBinPrefab;
 import dhbw.teamgold.game.minigames.prefabs.TrashPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame4Scene extends Scene {
+	
+	private static final float INITIAL_SECONDS = 7;
+	private static final float DIFFIVULTY_FACTOR = 0.2f;
 	
 	private GameStatsService stats = Services.get(GameStatsService.class);
 	private GameObjectService objects = Services.get(GameObjectService.class);
@@ -40,6 +44,7 @@ public class Minigame4Scene extends Scene {
 		this.addGameObject(new ScoreDisplayPrefab());
 		this.addGameObject(new LivesPrefab());
 		this.addGameObject(new TrashBinPrefab());
+		this.addGameObject(new GameCountdownDisplayPrefab(INITIAL_SECONDS, DIFFIVULTY_FACTOR));
 		trash.forEach(this::addGameObject);
 	}
 	

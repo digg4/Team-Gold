@@ -7,8 +7,8 @@ import dhbw.teamgold.game.common.services.GameStatsService;
 
 public class TrafficLightTimer extends Component {
 
-	private static final float RED_SECONDS_PER_DIFFICULTY = 0.1f;
-	private static final float GREEN_SECONDS_PER_DIFFICULTY = 0.15f;
+	private static final float RED_SECONDS_PER_DIFFICULTY = 0.025f;
+	private static final float GREEN_SECONDS_PER_DIFFICULTY = 0.0275f;
 	private static final float MIN_RED_SECONDS = 0.5f;
 	private static final float MIN_GREEN_SECONDS = 0.1f;
 	
