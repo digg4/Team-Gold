@@ -22,7 +22,7 @@ import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame3Scene extends Scene {
 
-	private static final float INITIAL_SECONDS = 8f;
+	private static final float INITIAL_SECONDS = 12f;
 	private static final float DIFFICULTY_FACTOR = 0.1f;
 
 	private List<Point> startPoints = new LinkedList<>();

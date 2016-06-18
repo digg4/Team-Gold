@@ -13,7 +13,7 @@ public class CableDataComponent extends Component {
 	
 	public static final float WIDTH = 10f;
 	public static final float HEIGHT = 100f;
-	private static final float DRAG_RADIUS = 10f;
+	private static final float DRAG_RADIUS = 15f;
 
 	@Require
 	private CableDifficultyAdapter difficultyAdapter;

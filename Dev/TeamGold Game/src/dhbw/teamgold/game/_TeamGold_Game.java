@@ -50,7 +50,7 @@ public class _TeamGold_Game extends StateBasedGame {
 //		addLoseScenes();
 		addGenericWinAndLoseScenes();
 		
-		this.enterState(SceneIds.MAIN_MENU);
+		this.enterState(SceneIds.SPLASH_SCREEN);
 	}
 
 
