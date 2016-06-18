@@ -24,7 +24,7 @@ public class GameInfoTextDisplayPrefab extends PrototypedPrefab {
 	
 	private static void mapInfoTexts() {
 		gameInfoTexts.put(SceneIds.GAME_1, Messages.getString("GameInfos.WaterTapGame"));
-		gameInfoTexts.put(SceneIds.GAME_2, Messages.getString("GameInfos.AppelPieGame"));
+		gameInfoTexts.put(SceneIds.GAME_2, Messages.getString("GameInfos.ApplePieGame"));
 		gameInfoTexts.put(SceneIds.GAME_3, Messages.getString("GameInfos.BeamerGame"));
 		gameInfoTexts.put(SceneIds.GAME_4, Messages.getString("GameInfos.LitterGame"));
 		gameInfoTexts.put(SceneIds.GAME_5, Messages.getString("GameInfos.TrainGetterGame"));
