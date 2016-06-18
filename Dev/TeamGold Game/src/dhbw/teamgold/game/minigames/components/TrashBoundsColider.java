@@ -35,9 +35,9 @@ public class TrashBoundsColider extends Component {
 		float horizontalForce = physicsComponent.getHorizontalForce();
 		
 		float trashBinX = 0.4f * sceneWidth;
-		float trashBinY = 0.4f * sceneHeight;
+		float trashBinY = 0.6f * sceneHeight;
 	    float trashBinWidth = 0.2f * sceneWidth;
-	    float trashBinHeight = 0.6f * sceneHeight;
+	    float trashBinHeight = 0.4f * sceneHeight;
 	    Rectangle trashBin = new Rectangle(trashBinX, trashBinY, trashBinWidth, trashBinHeight);
 
 		if (area.getMinX() <= 0) {
@@ -59,6 +59,14 @@ public class TrashBoundsColider extends Component {
 		}
 	
 		if (trashBin.intersects(area)) {
+			float x = area.getX();
+			float y = area.getY();
+			
+			x -= physicsComponent.getHorizontalSpeed() * arguments.getSecondsSinceLastUpdate();
+			y -= physicsComponent.getVerticalSpeed() * arguments.getSecondsSinceLastUpdate();
+			
+			area.setLocation(x, y);
+			
 			physicsComponent.setHorizontalSpeed(-0.4f * horizontalSpeed);
 			physicsComponent.setHorizontalForce(-0.1f * horizontalForce);
 			physicsComponent.setVerticalSpeed(-0.4f * verticalSpeed);

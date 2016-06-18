@@ -17,13 +17,14 @@ import dhbw.teamgold.game.common.services.GameStatsService;
 import dhbw.teamgold.game.minigames.prefabs.GameCountdownDisplayPrefab;
 import dhbw.teamgold.game.minigames.prefabs.GameInfoTextDisplayPrefab;
 import dhbw.teamgold.game.minigames.prefabs.TrashBinPrefab;
+import dhbw.teamgold.game.minigames.prefabs.TrashBinWinChecker;
 import dhbw.teamgold.game.minigames.prefabs.TrashPrefab;
 import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame4Scene extends Scene {
 	
-	private static final float INITIAL_SECONDS = 7;
-	private static final float DIFFIVULTY_FACTOR = 0.2f;
+	private static final float INITIAL_SECONDS = 12;
+	private static final float DIFFIVULTY_FACTOR = 0.1f;
 	
 	private GameStatsService stats = Services.get(GameStatsService.class);
 	private GameObjectService objects = Services.get(GameObjectService.class);
@@ -45,6 +46,7 @@ public class Minigame4Scene extends Scene {
 		this.addGameObject(new LivesPrefab());
 		this.addGameObject(new TrashBinPrefab());
 		this.addGameObject(new GameCountdownDisplayPrefab(INITIAL_SECONDS, DIFFIVULTY_FACTOR));
+		this.addGameObject(new TrashBinWinChecker(trash));
 		trash.forEach(this::addGameObject);
 	}
 	
@@ -59,12 +61,13 @@ public class Minigame4Scene extends Scene {
 	}
 	
 	private void initAreas() {
-		trashAreas.add(new Rectangle(0.5f, 0.9f, 0.1f, 0.1f));
-		trashAreas.add(new Rectangle(0.2f, 0.9f, 0.1f, 0.1f));
-		trashAreas.add(new Rectangle(0.35f, 0.9f, 0.1f, 0.1f));
-		trashAreas.add(new Rectangle(0.55f, 0.9f, 0.1f, 0.1f));
-		trashAreas.add(new Rectangle(0.7f, 0.9f, 0.1f, 0.1f));
-		trashAreas.add(new Rectangle(0.85f, 0.9f, 0.1f, 0.1f));
+		trashAreas.add(new Rectangle(0.01f, 0.93f, 0.07f, 0.07f));
+		trashAreas.add(new Rectangle(0.2f, 0.93f, 0.07f, 0.07f));
+		trashAreas.add(new Rectangle(0.33f, 0.93f, 0.07f, 0.07f));
+		trashAreas.add(new Rectangle(0.6f, 0.93f, 0.07f, 0.07f));
+		trashAreas.add(new Rectangle(0.77f, 0.93f, 0.07f, 0.07f));
+		trashAreas.add(new Rectangle(0.92f, 0.93f, 0.07f, 0.07f));
+		
 		
 		Collections.shuffle(trashAreas);
 	}
