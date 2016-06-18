@@ -89,13 +89,14 @@ public class TextRendererComponent extends Component {
 	public void onRenderGui(RenderArguments arguments) {
 		Graphics g = arguments.getGraphics();
 		if (font != null) {
+			System.out.println(font);
 			g.setFont(font);
 		}
 
 		if (textColor != null) {
 			g.setColor(textColor);
 		}
-
+		
 		Font font = g.getFont();
 		float textX = getTextX(font);
 		float textY = getTextY(font);

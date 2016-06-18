@@ -42,7 +42,7 @@ public class MiniGameSelectorServiceProvider implements Provider<MiniGameSelecto
 			}
 			
 			currentMiniGameId = gameIds.poll();
-			return SceneIds.GAME_4;
+			return currentMiniGameId;
 		}
 
 		@Override
@@ -52,14 +52,12 @@ public class MiniGameSelectorServiceProvider implements Provider<MiniGameSelecto
 
 		@Override
 		public int getCurrentWinSceneId() {
-			int gameToWinScene = SceneIds.WIN_1 - SceneIds.GAME_1;
-			return getCurrentMiniGameId() + gameToWinScene;
+			return SceneIds.GENERIC_WIN;
 		}
 
 		@Override
 		public int getCurrentLoseSceneId() {
-			int gameToLoseScene = SceneIds.LOSE_1 - SceneIds.GAME_1;
-			return getCurrentMiniGameId() + gameToLoseScene;
+			return SceneIds.GENERIC_LOSE;
 		}
 		
 	}

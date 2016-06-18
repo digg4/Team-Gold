@@ -33,6 +33,9 @@ public interface SceneIds {
 	int LOSE_3 = 43;
 	int LOSE_4 = 44;
 	int LOSE_5 = 45;
+	
+	int GENERIC_WIN = 51;
+	int GENERIC_LOSE = 52;
 
 	/**
 	 * All the IDs of Scenes that should only show something to to user but
