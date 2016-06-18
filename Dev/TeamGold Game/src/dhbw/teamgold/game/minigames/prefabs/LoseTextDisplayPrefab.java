@@ -13,7 +13,7 @@ import dhbw.teamgold.engine.core.PrototypedPrefab;
 public class LoseTextDisplayPrefab extends PrototypedPrefab {
 
 	private static final String[] LOSE_TEXTS = {
-			"rekt", "pwned", "n00b", "git gud", "lost", "u even trying?"
+			"Rekt", "Pwned", "N00b", "Git gud", "Lost", "U even trying?"
 	};
 	
 	private static Random random = new Random();
