@@ -22,7 +22,7 @@ import dhbw.teamgold.game.pausemenu.prefabs.LivesPrefab;
 
 public class Minigame4Scene extends Scene {
 	
-	private static final float INITIAL_SECONDS = 7;
+	private static final float INITIAL_SECONDS = 8;
 	private static final float DIFFIVULTY_FACTOR = 0.2f;
 	
 	private GameStatsService stats = Services.get(GameStatsService.class);
