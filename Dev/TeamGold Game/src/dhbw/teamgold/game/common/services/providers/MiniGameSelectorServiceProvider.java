@@ -42,7 +42,7 @@ public class MiniGameSelectorServiceProvider implements Provider<MiniGameSelecto
 			}
 			
 			currentMiniGameId = gameIds.poll();
-			return SceneIds.GAME_5;
+			return SceneIds.GAME_4;
 		}
 
 		@Override
