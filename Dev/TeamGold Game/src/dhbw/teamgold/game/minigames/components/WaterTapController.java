@@ -4,14 +4,15 @@ import dhbw.teamgold.engine.behavior.MouseButtonArguments;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 import dhbw.teamgold.engine.service.Services;
-import dhbw.teamgold.game.common.services.MiniGameSelectorService;
+import dhbw.teamgold.game.SceneIds;
+import dhbw.teamgold.game.common.services.WinLoseService;
 
 public class WaterTapController extends Component {
 
 	private static final float RADIANS_PER_TICK = (float) (Math.PI / 12);
 	private static final int CLICKS_TO_WIN = 20;
 
-	private MiniGameSelectorService miniGameSelectorService = Services.get(MiniGameSelectorService.class);
+	private WinLoseService winLoseService = Services.get(WinLoseService.class);
 
 	@Require
 	private WaterTapTransfromComponent transform;
@@ -29,7 +30,8 @@ public class WaterTapController extends Component {
 
 	private void checkForWin() {
 		if (remainingTicks <= 0) {
-			getGameObject().getScene().switchScene(miniGameSelectorService.getCurrentWinSceneId());
+			winLoseService.win();
+			getGameObject().getScene().switchScene(SceneIds.STATS_SCREEN);
 		}
 	}
 }

@@ -6,23 +6,11 @@ import org.newdawn.slick.state.StateBasedGame;
 
 import dhbw.teamgold.game.gameoverscreen.GameOverMenuScene;
 import dhbw.teamgold.game.mainmenu.MainMenuScene;
-import dhbw.teamgold.game.minigames.GenericLoseScene;
-import dhbw.teamgold.game.minigames.GenericWinScene;
-import dhbw.teamgold.game.minigames.Minigame1LoseScene;
 import dhbw.teamgold.game.minigames.Minigame1Scene;
-import dhbw.teamgold.game.minigames.Minigame1WinScene;
-import dhbw.teamgold.game.minigames.Minigame2LoseScene;
 import dhbw.teamgold.game.minigames.Minigame2Scene;
-import dhbw.teamgold.game.minigames.Minigame2WinScene;
-import dhbw.teamgold.game.minigames.Minigame3LoseScene;
 import dhbw.teamgold.game.minigames.Minigame3Scene;
-import dhbw.teamgold.game.minigames.Minigame3WinScene;
-import dhbw.teamgold.game.minigames.Minigame4LoseScene;
 import dhbw.teamgold.game.minigames.Minigame4Scene;
-import dhbw.teamgold.game.minigames.Minigame4WinScene;
-import dhbw.teamgold.game.minigames.Minigame5LoseScene;
 import dhbw.teamgold.game.minigames.Minigame5Scene;
-import dhbw.teamgold.game.minigames.Minigame5WinScene;
 import dhbw.teamgold.game.optionsmenu.OptionsMenuScene;
 import dhbw.teamgold.game.pausemenu.PauseMenuScene;
 import dhbw.teamgold.game.splashscreen.SplashScreenScene;
@@ -46,9 +34,6 @@ public class _TeamGold_Game extends StateBasedGame {
 		addScreens();
 		addMenus();
 		addMinigames();
-//		addWinScenes();
-//		addLoseScenes();
-		addGenericWinAndLoseScenes();
 		
 		this.enterState(SceneIds.SPLASH_SCREEN);
 	}
@@ -67,24 +52,6 @@ public class _TeamGold_Game extends StateBasedGame {
 		this.addState(new TimeOverMenuScene());
 	}
 
-	@SuppressWarnings("unused")
-	private void addLoseScenes() {
-		this.addState(new Minigame1LoseScene());
-		this.addState(new Minigame2LoseScene());
-		this.addState(new Minigame3LoseScene());
-		this.addState(new Minigame4LoseScene());
-		this.addState(new Minigame5LoseScene());
-	}
-
-	@SuppressWarnings("unused")
-	private void addWinScenes() {
-		this.addState(new Minigame1WinScene());
-		this.addState(new Minigame2WinScene());
-		this.addState(new Minigame3WinScene());
-		this.addState(new Minigame4WinScene());
-		this.addState(new Minigame5WinScene());
-	}
-
 	private void addMinigames() {
 		this.addState(new Minigame1Scene());
 		this.addState(new Minigame2Scene());
@@ -93,8 +60,4 @@ public class _TeamGold_Game extends StateBasedGame {
 		this.addState(new Minigame5Scene());
 	}
 
-	private void addGenericWinAndLoseScenes() {
-		this.addState(new GenericWinScene());
-		this.addState(new GenericLoseScene());
-	}
 }

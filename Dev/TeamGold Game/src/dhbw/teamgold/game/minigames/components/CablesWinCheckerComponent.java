@@ -6,12 +6,13 @@ import dhbw.teamgold.engine.behavior.UpdateArguments;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.GameObject;
 import dhbw.teamgold.engine.service.Services;
-import dhbw.teamgold.game.common.services.MiniGameSelectorService;
+import dhbw.teamgold.game.SceneIds;
+import dhbw.teamgold.game.common.services.WinLoseService;
 
 public class CablesWinCheckerComponent extends Component {
 
 	private GameObject[] cables;
-	private MiniGameSelectorService miniGameSelectorService = Services.get(MiniGameSelectorService.class);
+	private WinLoseService winLoseService = Services.get(WinLoseService.class);
 
 	public CablesWinCheckerComponent(GameObject... cables) {
 		this.cables = cables;
@@ -20,7 +21,8 @@ public class CablesWinCheckerComponent extends Component {
 	@Override
 	public void onUpdate(UpdateArguments arguments) {
 		if (allAreFinished()) {
-			getGameObject().getScene().switchScene(miniGameSelectorService.getCurrentWinSceneId());
+			winLoseService.win();
+			getGameObject().getScene().switchScene(SceneIds.STATS_SCREEN);
 		}
 	}
 

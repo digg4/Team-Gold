@@ -10,6 +10,8 @@ import dhbw.teamgold.game.common.services.providers.GameStatsServiceProvider;
 import dhbw.teamgold.game.common.services.providers.GameTimeServiceProvider;
 import dhbw.teamgold.game.common.services.providers.HighscoreServiceProvider;
 import dhbw.teamgold.game.common.services.providers.MiniGameSelectorServiceProvider;
+import dhbw.teamgold.game.common.services.providers.WinLoseServiceProvider;
+import dhbw.teamgold.game.common.services.providers.WinLoseTextServiceProvider;
 
 /**
  * A class to contain the main-method.
@@ -22,7 +24,7 @@ public final class Program {
 	private static final int WIDTH = 1280;
 	private static final int HEIGHT = 720;
 	private static final boolean FULLSCREEN = false;
-	private static final boolean SHOW_FPS = false;
+	private static final boolean SHOW_FPS = true;
 	private static final int TARGET_FPS = 60;
 
 	/**
@@ -57,6 +59,8 @@ public final class Program {
 		Services.provide(new GameTimeServiceProvider());
 		Services.provide(new GameStatsServiceProvider());
 		Services.provide(new MiniGameSelectorServiceProvider());
+		Services.provide(new WinLoseServiceProvider());
+		Services.provide(new WinLoseTextServiceProvider());
 	}
 
 	/**

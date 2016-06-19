@@ -5,11 +5,12 @@ import dhbw.teamgold.engine.components.AreaComponent;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 import dhbw.teamgold.engine.service.Services;
-import dhbw.teamgold.game.common.services.MiniGameSelectorService;
+import dhbw.teamgold.game.SceneIds;
+import dhbw.teamgold.game.common.services.WinLoseService;
 
 public class FoodCoverController extends Component {
 
-	private MiniGameSelectorService selectorService = Services.get(MiniGameSelectorService.class);
+	private WinLoseService winLoseService = Services.get(WinLoseService.class);
 
 	@Require
 	private FoodCoverAnimator animator;
@@ -27,10 +28,11 @@ public class FoodCoverController extends Component {
 	public void onMouseButtonPressed(MouseButtonArguments arguments) {
 		if (animator.isFinished() && area.contains(arguments.getX(), arguments.getY())) {
 			if (onClickAction == OnClickAction.WIN) {
-				getGameObject().getScene().switchScene(selectorService.getCurrentWinSceneId());
+				winLoseService.win();
 			} else {
-				getGameObject().getScene().switchScene(selectorService.getCurrentLoseSceneId());
+				winLoseService.lose();
 			}
+			getGameObject().getScene().switchScene(SceneIds.STATS_SCREEN);
 		}
 	}
 

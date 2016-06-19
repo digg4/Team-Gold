@@ -4,12 +4,13 @@ import dhbw.teamgold.engine.behavior.MouseButtonArguments;
 import dhbw.teamgold.engine.core.Component;
 import dhbw.teamgold.engine.core.Require;
 import dhbw.teamgold.engine.service.Services;
-import dhbw.teamgold.game.common.services.MiniGameSelectorService;
+import dhbw.teamgold.game.SceneIds;
+import dhbw.teamgold.game.common.services.WinLoseService;
 import dhbw.teamgold.game.minigames.components.TrafficLightTimer.Phase;
 
 public class TrafficLightClickHandler extends Component {
 
-	private MiniGameSelectorService selectorService = Services.get(MiniGameSelectorService.class);
+	private WinLoseService winLoseService = Services.get(WinLoseService.class);
 	
 	@Require
 	private TrafficLightTimer timer;
@@ -17,11 +18,13 @@ public class TrafficLightClickHandler extends Component {
 	@Override
 	public void onMouseButtonPressed(MouseButtonArguments arguments) {
 		if (timer.getPhase() == Phase.RED) {
-			getGameObject().getScene().switchScene(selectorService.getCurrentLoseSceneId());
+			winLoseService.lose();
 		} 
 		
 		if (timer.getPhase() == Phase.GREEN){
-			getGameObject().getScene().switchScene(selectorService.getCurrentWinSceneId());
+			winLoseService.win();
 		}
+		
+		getGameObject().getScene().switchScene(SceneIds.STATS_SCREEN);
 	}
 }

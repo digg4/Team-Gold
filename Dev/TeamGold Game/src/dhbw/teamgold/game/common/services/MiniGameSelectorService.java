@@ -22,15 +22,5 @@ public interface MiniGameSelectorService extends Service {
 	 * @return The ID of the current minigame.
 	 */
 	int getCurrentMiniGameId();
-	
-	/**
-	 * @return The ID of the win-scene for the current minigame.
-	 */
-	int getCurrentWinSceneId();
-	
-	/**
-	 * @return The ID of the lose-scene for the current minigame.
-	 */
-	int getCurrentLoseSceneId();
 
 }
