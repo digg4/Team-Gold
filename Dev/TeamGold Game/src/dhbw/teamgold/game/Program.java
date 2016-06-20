@@ -24,7 +24,7 @@ public final class Program {
 	private static final int WIDTH = 1280;
 	private static final int HEIGHT = 720;
 	private static final boolean FULLSCREEN = false;
-	private static final boolean SHOW_FPS = true;
+	private static final boolean SHOW_FPS = false;
 	private static final int TARGET_FPS = 60;
 
 	/**
