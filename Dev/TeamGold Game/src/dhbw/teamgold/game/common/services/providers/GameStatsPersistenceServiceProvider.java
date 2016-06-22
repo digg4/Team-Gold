@@ -26,7 +26,7 @@ public class GameStatsPersistenceServiceProvider implements Provider<GameStatsPe
 
 	private static class GameStatsPersistenceServiceImpl implements GameStatsPersistenceService {
 
-		private static final String FILE_NAME = "test.savegame";
+		private static final String FILE_NAME = "res/.savegame";
 
 		private PersistentGameStats stats = null;
 
